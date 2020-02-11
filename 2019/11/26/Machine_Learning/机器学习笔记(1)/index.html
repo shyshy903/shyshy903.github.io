@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Archives: 2020 | Open-Box</title>
+  <title>《机器学习实战》《西瓜书》笔记（一） | Open-Box</title>
   
   
 
@@ -49,7 +49,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover  half'>
+    <cover class='cover post half'>
       
         
   <h1 class='title'>Open-Box</h1>
@@ -218,40 +218,10 @@
   <div class="l_body">
     <div class='body-wrapper'>
       <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
   
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
 
 
   <section class='meta'>
@@ -260,11 +230,13 @@
     <div class="meta" id="header-meta">
       
         
-  <h2 class="title">
-    <a href="/2020/02/11/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/%E7%90%86%E8%AE%BA%E5%82%AC%E5%8C%96%E8%AE%A1%E7%AE%97(%E4%B8%80)/">
-      理论催化计算（一）
-    </a>
-  </h2>
+  
+    <h1 class="title">
+      <a href="/2019/11/26/Machine_Learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/">
+        《机器学习实战》《西瓜书》笔记（一）
+      </a>
+    </h1>
+  
 
 
       
@@ -292,7 +264,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-11</p>
+    <p>2019-11-26</p>
   </a>
 </div>
 
@@ -302,11 +274,29 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86%E4%B8%8E%E5%8C%96%E5%AD%A6/' rel="nofollow">
+    <a href='/categories/Machine-Learning/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>计算物理与化学</p>
+      <p>Machine_Learning</p>
     </a>
   </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
 
 
           
@@ -330,992 +320,203 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <div class="button readmore">
-          <a href="/2020/02/11/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/%E7%90%86%E8%AE%BA%E5%82%AC%E5%8C%96%E8%AE%A1%E7%AE%97(%E4%B8%80)/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86%E4%B8%8E%E5%8C%96%E5%AD%A6/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 计算物理与化学</a>
-        
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <h1 id="《机器学习实战》《西瓜书》笔记（一）"><a href="#《机器学习实战》《西瓜书》笔记（一）" class="headerlink" title="《机器学习实战》《西瓜书》笔记（一）"></a>《机器学习实战》《西瓜书》笔记（一）</h1><h2 id="机器学习的相关概念"><a href="#机器学习的相关概念" class="headerlink" title="机器学习的相关概念"></a>机器学习的相关概念</h2><p>我们要做的其实是让机器他有自己学习的能力，也就我们要做的应该<code>machine learning</code>的方向。讲的比较拟人化一点，所谓<code>machine learning</code>的方向，就是你就写段程序，然后让机器人变得了很聪明，他就能够有学习的能力。接下来，你就像教一个婴儿、教一个小孩一样的教他，你并不是写程序让他做到这件事，你是写程序让它具有学习的能力。然后接下来，你就可以用像教小孩的方式告诉它。假设你要叫他学会做语音辨识，你就告诉它这段声音是<code>“Hi”</code>，这段声音就是<code>“How are you”</code>，这段声音是<code>“Good bye”</code>。希望接下来它就学会了，你给它一个新的声音，它就可以帮你产生语音辨识的结果。<br><strong>用数学的语义去理解，机器需要一个函数对输入进行自主判断输出，以完成回归预测、分类、聚类等实际任务</strong></p>
+<ul>
+<li><strong>监督学习</strong><br>从给定的训练数据集中学习出一个函数，当新的数据到来时，可以根据这个函数预测结果。监督学习的训练集要求是包括输入和输出，也可以说是特征和目标。训练集中的目标是由人标注的。常见的监督学习算法包括<strong>回归分析和统计分类</strong>。</li>
+<li><strong>无监督学习</strong><br>与监督学习相比，训练集没有人为标注的结果。常见的无监督学习算法有<strong>生成对抗网络（GAN）、聚类</strong></li>
+<li><strong>半监督学习</strong><br>介于监督学习与无监督学习之间</li>
+<li><strong>增强学习机器</strong><br>为了达成目标，随着环境的变动，而逐步调整其行为，并评估每一个行动之后所到的回馈是正向的或负向的</li>
+</ul>
+<h2 id="开发机器学习应用程序的主要步骤"><a href="#开发机器学习应用程序的主要步骤" class="headerlink" title="开发机器学习应用程序的主要步骤"></a>开发机器学习应用程序的主要步骤</h2><ul>
+<li>收集数据</li>
+<li>准备输入数据（Python语言）</li>
+<li>分析输入数据（数据处理、降维等方法）</li>
+<li>训练算法（无监督学习不需要训练算法）</li>
+<li>测试算法</li>
+<li>执行算法</li>
+</ul>
+<h2 id="机器学习的基本术语"><a href="#机器学习的基本术语" class="headerlink" title="机器学习的基本术语"></a>机器学习的基本术语</h2><p>这组记录的集合称为一个 <strong>“数据集” (data set)</strong><br>其中每条记录是关于一个事件或对象(这里是一个西瓜)的描述，称为一个 <strong>“示例” (instance) 或”样本” (sample)</strong><br>反映事件或对象在某方面的表现或性质的事项，例如”色泽” “根蒂” “敲声”，称为”)副主” (attribute) 或 <strong>“特征”</strong>(feature)属性上的取值，例如”青绿” “乌黑”，称为”)副主值” (attribute va1ue)<br>属性张成的空间称为”属性空间” (attribute space)”样本空间” (samp1e space)或”输入空间”<br>例如我们把”色泽” “根蒂” “敲声”作为三个坐标轴，则它们张成一个用于描述西瓜的三维空间，每个西瓜都可在这个空间中找到自己的坐标位置.由于空间中的每个点对应一个坐标向量，因此我们也把…个示例称为一个 <strong>“特征向量” (feature vector)</strong>.<br><code>eg:</code><br>$D = {x_1,x_2,….x_m} $ 样本包含<code>m</code>个实例<br>$x_i = {x_{i1}…..x_{id}}$ 是<code>d</code>维样本空间的一个向量<br>((色泽:青绿;根蒂二蜷缩; 敲声=浊响)，好瓜)” .这里关于示例结果的信息，例如”好瓜”，称为 <strong>“标记” (labe1)</strong>; 拥有了标记信息的示例，则称为”样例” (examp1e).</p>
+<h2 id="假设空间"><a href="#假设空间" class="headerlink" title="假设空间"></a>假设空间</h2><p>归纳是从特殊到一般的“泛化”过程，演绎是从一般到特殊的“特化”过程。<br>学习的目的是“泛化”，即通过对训练集中瓜的学习已获得对没见过的瓜进行判断的能力。<br>学习过程看作一个在所以假设组成的空间中进行搜索的过程，搜索目标是找到与训练集“匹配”的假设，即能够将训练集中的瓜判断正确的假设。假设的表示一旦确实，假设空间及其规模大小就却确定了。 </p>
+<p>我们用 m 表示这 个假设.这样，若”色泽” “根蒂” “敲声”分别有3、 2、 2 种可能取值，则我 们面临的假设空间规模大小为 4 x 3 x 3 + 1 = 37.</p>
+<h2 id="归纳偏好"><a href="#归纳偏好" class="headerlink" title="归纳偏好"></a>归纳偏好</h2><p>现在有三个与训练集一致的假设，但与他们对应的模型在面临新样本的时候，却会产生不同的输出。根据仅有的训练样本无法判断三个假设中哪个“更好”。对于一个具体的学习算法而言，它必须要产生一个模型，这时，学习算法本身的“偏好”起到关键左右。例如，若算法喜欢“尽可能特殊”的模型，则会有相应的模型产生。机器学习算法在学习过程中对某种类型假设的偏好，称为“归纳偏好”。<br>任何一个有效的机器学习算法必有其归纳偏好，否则产生的模型每次在进行预测时随机抽选训练集上的等效假设，学得模型结果不一，显然没有意义。</p>
+<p>归纳偏好可看作学习算法自身在一个可能很庞大的假设空间中对假设进 行选择的启发式或”价值观”那么，有没有一般性的原则来引导算法确立 “正确的”偏好呢? “奥卡姆剃刀” (Occam’s razor)是一种常用的、自然科学 研究中最基本的原则，即”若有多个假设与观察一致，则选最简单的那个”如 果采用这个原则，并且假设我们认为”更平滑”意味着”更简单” (例如曲线 A 更易于描述，其方程式是 $y = x2+ 6x + 1$ ，而曲线 B 则要复杂得多)，则在 图1.3 中我们会自然地偏好”平滑”的曲线 A.</p>
+<h2 id="生成式模型与判别式模型"><a href="#生成式模型与判别式模型" class="headerlink" title="生成式模型与判别式模型"></a>生成式模型与判别式模型</h2><ul>
+<li><p>产生式模型<br>从统计的角度表示数据的分布情况，能够反映同类数据本身的相似度，不关心判别边界。</p>
+</li>
+<li><p>判别式模型<br>寻找不同类别之间的最优分类面，反映的是异类数据之间的差异。</p>
+</li>
+</ul>
+<p><strong>区别：</strong></p>
+<p>假设有样本输入值（或者观察值）x，类别标签（或者输出值）y</p>
+<p>判别式模型评估对象是最大化条件概率p(y|x)并直接对其建模，</p>
+<p>生成式模型评估对象是最大化联合概率p(x,y)并对其建模。</p>
+<p>其实两者的评估目标都是要得到最终的类别标签Y， 而Y=argmax p(y|x)，不同的是判别式模型直接通过解在满足训练样本分布下的最优化问题得到模型参数，主要用到拉格朗日乘算法、梯度下降法，常见的判别式模型如最大熵模型、CRF、LR、SVM等；</p>
+<p>而生成式模型先经过贝叶斯转换成Y = argmax p(y|x) = argmax p(x|y)*p(y)，然后分别学习p(y)和p(x|y)的概率分布，主要通过极大似然估计的方法学习参数，如NGram、HMM、Naive Bayes。</p>
+<p><strong>优缺点：</strong></p>
+<ul>
+<li>生成模型：</li>
+</ul>
+<p>优点：<br>1）实际上带的信息要比判别模型丰富，研究单类问题比判别模型灵活性强<br>2）模型可以通过增量学习得到<br>3）生成模型能够应付存在隐变量的情况，比如混合高斯模型就是含有隐变量的生成方法。</p>
+<p>缺点：<br>1）学习过程比较复杂。<br>2）实践中多数情况下判别模型效果更好。</p>
+<ul>
+<li>判别模型：</li>
+</ul>
+<p>优点：<br>1）分类边界更灵活，比使用纯概率方法或生产模型得到的更高级.<br>2）准确率往往较生成模型高。<br>3）不需要求解类别条件概率，所以允许我们对输入进行抽象（比如降维、构造等），从而能够简化学习问题。</p>
+<p>缺点：<br>1）不能反映训练数据本身的特性。</p>
+
       </div>
-    
-  </section>
-</article>
-
-          </div>
+      
+        <br>
+        <center>这是文章页脚，可以设置打赏图片：<br><fancybox>![](https://img.vim-cn.com/4a/5f8244a7c6e1e069a781b84ed11008e7955e16.png)</fancybox></center>
+      
+      
+        <br>
         
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
       
         
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2020/02/11/%E8%AE%BE%E8%AE%A1/%E5%85%B3%E4%BA%8E%E9%A2%9C%E8%89%B2/">
-      色彩搭配与设计
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://shyshy903.github.io" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>Haiyang Song</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-11T16:48:55+08:00">
   <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-11</p>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>updated at Feb 11, 2020</p>
   </a>
 </div>
 
-          
+        
+      
         
           
-            
   
-  <div class='new-meta-item category'>
-    <a href='/categories/%E8%AE%BE%E8%AE%A1/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>设计</p>
-    </a>
-  </div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ML/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>ML</p></a></div>
 
 
-          
+        
+      
         
           
-            
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <div class="button readmore">
-          <a href="/2020/02/11/%E8%AE%BE%E8%AE%A1/%E5%85%B3%E4%BA%8E%E9%A2%9C%E8%89%B2/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/color/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> color</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
       
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2020/02/11/java/shyjava(5)/">
-      Java学习笔记（五）
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-        
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://shyshy903.github.io/2019/11/26/Machine_Learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/&title=《机器学习实战》《西瓜书》笔记（一） | Open-Box&summary="
           
-            
-  <div class='new-meta-item author'>
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
     
-      <a href="https://shyshy903.github.io" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>Haiyang Song</p>
-      </a>
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://shyshy903.github.io/2019/11/26/Machine_Learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/&title=《机器学习实战》《西瓜书》笔记（一） | Open-Box&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://shyshy903.github.io/2019/11/26/Machine_Learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/&title=《机器学习实战》《西瓜书》笔记（一） | Open-Box&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
     
   </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-11</p>
-  </a>
 </div>
 
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/java/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>java</p>
-    </a>
-  </div>
 
 
-          
         
-          
-            
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
       
     </div>
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
       
       
-        <div class="button readmore">
-          <a href="/2020/02/11/java/shyjava(5)/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/java/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> java</a>
-        
-      </div>
-    
-  </section>
-</article>
-
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                          <h4>
+                              <a href="/2019/11/26/Machine_Learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89/" rel="prev" title="《机器学习实战》《西瓜书》笔记（二）- 模型评估与选择">
+                                
+                                    《机器学习实战》《西瓜书》笔记（二）- 模型评估与选择
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/ML/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> ML</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/2019/11/25/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/%E7%A7%91%E6%8A%80%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E7%9A%84%E5%8F%A5%E5%BC%8F/" rel="prev" title="学术论文写作的句式结构">
+                                  
+                                      学术论文写作的句式结构
+                                  
+                              </a>
+                          </h4>
+                          
+                      </span>
+                  </section>
+              
           </div>
-        
       
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
+    </section>
+  </article>
 
 
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2020/02/11/java/shyjava(4)/">
-      Java学习笔记（四）
-    </a>
-  </h2>
 
+  <!-- 显示推荐文章和评论 -->
 
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://shyshy903.github.io" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>Haiyang Song</p>
-      </a>
-    
-  </div>
 
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-11</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/java/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>java</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <div class="button readmore">
-          <a href="/2020/02/11/java/shyjava(4)/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/java/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> java</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2020/02/11/java/shyjava(3)/">
-      Java学习笔记（三）
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://shyshy903.github.io" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>Haiyang Song</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-11</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/java/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>java</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <div class="button readmore">
-          <a href="/2020/02/11/java/shyjava(3)/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/java/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> java</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2020/02/11/java/shyjava(2)/">
-      Java学习笔记（一）
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://shyshy903.github.io" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>Haiyang Song</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-11</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/java/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>java</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <div class="button readmore">
-          <a href="/2020/02/11/java/shyjava(2)/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/java/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> java</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2020/02/11/java/shyjava(1)/">
-      Java学习笔记（一）
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://shyshy903.github.io" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>Haiyang Song</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-11</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/java/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>java</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <div class="button readmore">
-          <a href="/2020/02/11/java/shyjava(1)/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/java/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> java</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2020/02/11/SQL/SQL%E8%AF%AD%E8%A8%80%EF%BC%88%E4%B8%80%EF%BC%89/">
-      SQL语言进阶（一）
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://shyshy903.github.io" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>Haiyang Song</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-11</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/SQL/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>SQL</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <div class="button readmore">
-          <a href="/2020/02/11/SQL/SQL%E8%AF%AD%E8%A8%80%EF%BC%88%E4%B8%80%EF%BC%89/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/SQL/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> SQL</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2020/02/11/SQL/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
-      MySQL的安装与配置
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://shyshy903.github.io" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>Haiyang Song</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-11</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>软件安装与配置</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <div class="button readmore">
-          <a href="/2020/02/11/SQL/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/SQL/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> SQL</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2020/02/11/hello-world/">
-      Hello World
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://shyshy903.github.io" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>Haiyang Song</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-11</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <div class="button readmore">
-          <a href="/2020/02/11/hello-world/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
 
   
 
 
-	
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '《机器学习实战》《西瓜书》笔记（一）',
+      tools: true
+    }
+  </script>
+
+
 </div>
 <aside class='l_side'>
   
@@ -1412,99 +613,36 @@
         
           
           
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
             
-              <section class='widget list'>
-  
+              
+  <section class='widget toc-wrapper'>
+    
 <header class='pure'>
-  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
   
 </header>
 
-  <div class='content pure'>
-    <ul class="entry">
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/hexo.sh/" href="https://xaoxuu.com/wiki/hexo.sh/"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;Hexo脚本（Mac）
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/vim-cn.sh/" href="https://xaoxuu.com/wiki/vim-cn.sh/"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;图床脚本（Mac）
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="https://yasuotu.com" href="https://yasuotu.com"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;图片在线压缩
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="https://realfavicongenerator.net" href="https://realfavicongenerator.net"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;生成Favicon
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="https://mxclub.github.io/resume/" href="https://mxclub.github.io/resume/"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;简历主题
-          </div>
-          
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#《机器学习实战》《西瓜书》笔记（一）"><span class="toc-text">《机器学习实战》《西瓜书》笔记（一）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#机器学习的相关概念"><span class="toc-text">机器学习的相关概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发机器学习应用程序的主要步骤"><span class="toc-text">开发机器学习应用程序的主要步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#机器学习的基本术语"><span class="toc-text">机器学习的基本术语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#假设空间"><span class="toc-text">假设空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#归纳偏好"><span class="toc-text">归纳偏好</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成式模型与判别式模型"><span class="toc-text">生成式模型与判别式模型</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
 
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
       
@@ -1699,6 +837,108 @@
         
           
           
+            
+              <section class='widget list'>
+  
+<header class='pure'>
+  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="entry">
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/hexo.sh/" href="https://xaoxuu.com/wiki/hexo.sh/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;Hexo脚本（Mac）
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/vim-cn.sh/" href="https://xaoxuu.com/wiki/vim-cn.sh/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;图床脚本（Mac）
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://yasuotu.com" href="https://yasuotu.com"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;图片在线压缩
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://realfavicongenerator.net" href="https://realfavicongenerator.net"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;生成Favicon
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://mxclub.github.io/resume/" href="https://mxclub.github.io/resume/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;简历主题
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
       
     
@@ -1754,14 +994,6 @@
   </div>
 </footer>
 <script>setLoadingBarProgress(80);</script>
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
       <script>setLoadingBarProgress(60);</script>

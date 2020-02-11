@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Hello World | Open-Box</title>
+  <title>Hexo + GithubPages 搭建个人博客与网站！ | Open-Box</title>
   
   
 
@@ -232,8 +232,8 @@
         
   
     <h1 class="title">
-      <a href="/2020/02/11/hello-world/">
-        Hello World
+      <a href="/2019/10/15/%E9%85%8D%E7%BD%AE/Hexo-GithubPages%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/">
+        Hexo + GithubPages 搭建个人博客与网站！
       </a>
     </h1>
   
@@ -264,7 +264,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-11</p>
+    <p>2019-10-15</p>
   </a>
 </div>
 
@@ -272,6 +272,14 @@
         
           
             
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/hexo/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>hexo</p>
+    </a>
+  </div>
+
 
           
         
@@ -314,19 +322,108 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h1 id="Hexo-GithubPages-搭建个人博客与网站！"><a href="#Hexo-GithubPages-搭建个人博客与网站！" class="headerlink" title="Hexo + GithubPages 搭建个人博客与网站！"></a>Hexo + GithubPages 搭建个人博客与网站！</h1><h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2><h3 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h3><ol>
+<li><p><a href="https://www.simon96.online/2018/11/10/hexo-env/" target="_blank" rel="noopener">node.js 下载</a>，并安装。</p>
+</li>
+<li><p><a href="https://www.simon96.online/2018/11/10/hexo-env/" target="_blank" rel="noopener">Git 下载</a>，并安装。</p>
+</li>
+<li><p>安装<code>Hexo</code>，在命令行（即<code>Git Bash</code>）运行以下命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
+<li><p>初始化<code>hexo</code>,在命令行依次运行以下命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init folder</span><br><span class="line">$ <span class="built_in">cd</span> folder</span><br><span class="line">$ npm install hexo server</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>新建完成后，会在路径下产生下列文件和文件夹：  </p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml  % 站点配置文件</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts  % 文章发布文件夹</span><br><span class="line"> themes  % 主题配置文件夹，可folk别人的模板</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动服务，在命令行输入:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></li>
+<li><p>浏览器访问网址,至此，<code>hexo</code>博客已经搭建到本地了</p>
+</li>
+</ol>
+<h3 id="Github实时搭建"><a href="#Github实时搭建" class="headerlink" title="Github实时搭建"></a><code>Github</code>实时搭建</h3><ol>
+<li>在github官网创建账号</li>
+<li>创建仓库：<code>&lt;账号名称&gt;github.io</code></li>
+<li>将本地博客推送到<code>githubPages</code>。</li>
+</ol>
+<ul>
+<li><p>安装<code>hexo-deplyer-git</code>插件。<code>bash</code>命令行运行。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加<code>github</code>的<code>SSH-KEY</code>,创建一个<code>SSH-KEY</code>,在命令行输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"邮箱地址"</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><code>C:\Users\Administrator\.ssh\id_rsa.pub</code></p>
+</blockquote>
+<ul>
+<li>修改<code>_config.yml</code>,文件末尾修改为:<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span>   <span class="string">%</span> <span class="string">注意冒号后面有一个空格</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:shyshy903/shyshy903.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></li>
+<li>推送到<code>githubPages</code>中。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>之后在浏览器输入：<a href="http://shyshy903.github.io">http://shyshy903.github.io</a> 就可以访问个人博客了  </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="添加域名，创建个人网站"><a href="#添加域名，创建个人网站" class="headerlink" title="添加域名，创建个人网站"></a>添加域名，创建个人网站</h3><ol>
+<li>到万网或者阿里云买一个域名，进行<code>DNS</code>解析</li>
+<li><code>DNS</code>解析：<br>类型选择为 <code>CNAME</code>;<br>机记录即域名前缀，填写为<code>www</code>;<br>录值填写为<code>&lt;Github账号名称&gt;.github.io</code>;<br>解析线路，<code>TTL</code> 默认即可</li>
+<li>仓库设置  </li>
+<li><ol>
+<li>打开博客仓库设置：<code>https://github.com/&lt;Github账号名称&gt;/&lt;Github账号名称&gt;.github.io/settings</code>  </li>
+</ol>
+</li>
+<li><ol start="2">
+<li>在<code>Custom domain</code>下，填写自定义域名，点击<code>save</code>； </li>
+</ol>
+</li>
+<li><ol start="3">
+<li>在站点目录的<code>source</code>文件夹下，创建并打开<code>CNAME.txt</code>，写入你的域名（如<code>www.simon96.online</code>），保存，并重命名为<code>CNAME</code><blockquote>
+<p>完成以上步骤，就可以通过域名<code>www.shyshy903.top</code>来访问个人网站和博客了。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="安装必要的插件"><a href="#安装必要的插件" class="headerlink" title="安装必要的插件"></a>安装必要的插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -S hexo-generator-search hexo-generator-json-content hexo-renderer-less</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h3 id="站点配置-hexo根目录下config-yml文件"><a href="#站点配置-hexo根目录下config-yml文件" class="headerlink" title="站点配置-hexo根目录下config.yml文件"></a>站点配置-<code>hexo</code>根目录下<code>config.yml</code>文件</h3><ul>
+<li>多语言支持<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">en</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">zh-HK</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">zh-TW</span></span><br></pre></td></tr></table></figure></li>
+<li>搜索框的配置<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+站点文件添加下面的代码块：<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">    <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">    <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">    <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<h3 id="主题优化之自定样式-cdn的使用"><a href="#主题优化之自定样式-cdn的使用" class="headerlink" title="主题优化之自定样式 cdn的使用"></a>主题优化之自定样式 <code>cdn</code>的使用</h3><code>cdn + github</code>的博客可以参考别人的文章<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">############################### 基本信息 ###############################</span></span><br><span class="line"><span class="attr">info:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">Material</span> <span class="string">X</span></span><br><span class="line">  <span class="attr">docs:</span> <span class="string">https://xaoxuu.com/wiki/material-x/</span></span><br><span class="line">  <span class="attr">cdn:</span> <span class="comment"># 把对应的那一行注释掉就使用本地的文件</span></span><br><span class="line">    <span class="attr">css:</span></span><br><span class="line">      <span class="comment"># style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9.9/css/style.css</span></span><br><span class="line">    <span class="attr">js:</span></span><br><span class="line">      <span class="attr">app:</span> <span class="string">https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/app.js</span></span><br><span class="line">      <span class="attr">search:</span> <span class="string">https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/search.js</span></span><br><span class="line">      <span class="attr">volantis:</span> <span class="string">https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0.5/js/volantis.min.js</span></span><br></pre></td></tr></table></figure>
+<h3 id="主题优化之评论系统-valine的使用"><a href="#主题优化之评论系统-valine的使用" class="headerlink" title="主题优化之评论系统 valine的使用"></a>主题优化之评论系统 <code>valine</code>的使用</h3></li>
+<li>站点配置<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">leancloud:</span></span><br><span class="line">  <span class="attr">app_id:</span> <span class="string">你的appId</span>   <span class="comment"># 从leancloud官网获得：https://www.avoscloud.com/dashboard/</span></span><br><span class="line">  <span class="attr">app_key:</span> <span class="string">你的appKey</span></span><br></pre></td></tr></table></figure></li>
+<li>主题配置<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># 如果你想用Valine评论系统，请设置enable为true</span></span><br><span class="line">  <span class="attr">volantis:</span> <span class="literal">true</span> <span class="comment"># 是否启用volantis版本（禁止匿名，增加若干贴吧、QQ表情）</span></span><br><span class="line">  <span class="comment"># 还需要在根目录配置文件中添加下面这三行内容</span></span><br><span class="line">  <span class="comment"># leancloud:</span></span><br><span class="line">  <span class="comment">#   app_id: 你的appId</span></span><br><span class="line">  <span class="comment">#   app_key: 你的appKey</span></span><br><span class="line">  <span class="attr">guest_info:</span> <span class="string">nick,mail,link</span> <span class="comment">#valine comment header info</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">快来评论吧~</span> <span class="comment"># valine comment input placeholder(like: Please leave your footprints )</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mp</span> <span class="comment"># gravatar style https://valine.js.org/avatar</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">20</span> <span class="comment"># comment list page size</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># valine verify code (true/false)</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">false</span> <span class="comment"># valine mail notify (true/false)</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-cn</span></span><br><span class="line">  <span class="attr">highlight:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h3 id="主题优化之加入萌萌哒表情"><a href="#主题优化之加入萌萌哒表情" class="headerlink" title="主题优化之加入萌萌哒表情"></a>主题优化之加入萌萌哒表情</h3></li>
+</ul>
+<ol>
+<li><p>这里需要安装一个插件哦:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-helper-live2d --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>复制你喜欢的名字，如<code>z16</code>。</p>
+</li>
+<li><p>在<code>hexo</code>文件夹中建立一个文件夹<code>live2d_models</code>。  </p>
+</li>
+<li><p>1 在<code>live2d_models</code>中建立文件夹<code>z16</code>。  </p>
+</li>
+<li><p>2 在文件夹啊<code>z16</code>中创建<code>json</code>文件：<code>z16.model.json</code>。</p>
+</li>
+<li><p>将以下代码添加到主题配置文件中去：  </p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">live2d:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">scriptFrom:</span> <span class="string">local</span></span><br><span class="line">  <span class="attr">pluginRootPath:</span> <span class="string">live2dw/</span></span><br><span class="line">  <span class="attr">pluginJsPath:</span> <span class="string">lib/</span></span><br><span class="line">  <span class="attr">pluginModelPath:</span> <span class="string">assets/</span></span><br><span class="line">  <span class="attr">tagMode:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">log:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">model:</span></span><br><span class="line">    <span class="attr">use:</span> <span class="string">live2d-widget-model-z16</span></span><br><span class="line">  <span class="attr">display:</span></span><br><span class="line">    <span class="attr">position:</span> <span class="string">right</span></span><br><span class="line">    <span class="attr">width:</span> <span class="number">150</span></span><br><span class="line">    <span class="attr">height:</span> <span class="number">300</span></span><br><span class="line">  <span class="attr">mobile:</span></span><br><span class="line">    <span class="attr">show:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
+<li><p>安装模型:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install liv2d_models-widget-z16 --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在命令行中运行命令，既可以在<code>&quot;http://localhost:4000&quot;</code>中预览自己的博客网页  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果预览的博客符合自己的要求，就可以进行更新,大公告成啦：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果需要调整插入模型的透明度，可以在第4步中的代码中插入：  </p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">display:</span></span><br><span class="line">    <span class="attr">position:</span> <span class="string">right</span></span><br><span class="line">    <span class="attr">width:</span> <span class="number">300</span></span><br><span class="line">    <span class="attr">height:</span> <span class="number">600</span></span><br><span class="line">    <span class="attr">opacity:</span> <span class="number">0.4</span></span><br><span class="line">  <span class="attr">mobile:</span></span><br><span class="line">    <span class="attr">show:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">react:</span></span><br><span class="line">    <span class="attr">opacity:</span> <span class="number">0.4</span></span><br><span class="line">    <span class="attr">opacityOnHover:</span> <span class="number">0.7</span></span><br></pre></td></tr></table></figure></li>
+</ol>
 
       </div>
       
@@ -342,7 +439,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-11T15:40:07+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-11T16:48:55+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>updated at Feb 11, 2020</p>
@@ -353,6 +450,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hexo/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>hexo</p></a></div>
+
 
         
       
@@ -364,7 +464,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://shyshy903.github.io/2020/02/11/hello-world/&title=Hello World | Open-Box&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://shyshy903.github.io/2019/10/15/%E9%85%8D%E7%BD%AE/Hexo-GithubPages%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/&title=Hexo + GithubPages 搭建个人博客与网站！ | Open-Box&summary="
           
           >
           
@@ -376,7 +476,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://shyshy903.github.io/2020/02/11/hello-world/&title=Hello World | Open-Box&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://shyshy903.github.io/2019/10/15/%E9%85%8D%E7%BD%AE/Hexo-GithubPages%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/&title=Hexo + GithubPages 搭建个人博客与网站！ | Open-Box&summary="
           
           >
           
@@ -388,7 +488,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://shyshy903.github.io/2020/02/11/hello-world/&title=Hello World | Open-Box&summary="
+          href="http://service.weibo.com/share/share.php?url=https://shyshy903.github.io/2019/10/15/%E9%85%8D%E7%BD%AE/Hexo-GithubPages%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/&title=Hexo + GithubPages 搭建个人博客与网站！ | Open-Box&summary="
           
           >
           
@@ -416,40 +516,21 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
                           <h4>
-                              <a href="/2020/02/11/SQL/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" rel="prev" title="MySQL的安装与配置">
+                              <a href="/2019/11/01/Linux/linux/" rel="prev" title="Linux">
                                 
-                                    MySQL的安装与配置
+                                    Linux
                                 
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/SQL/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> SQL</a>
+                                  <a class="tag" href="/tags/linux/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> linux</a>
                               </h6>
                           
                       </span>
                   </section>
               
-              
-                  <section class="next">
-                      <span class="art-item-right" aria-hidden="true">
-                          <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                          <h4>
-                              <a href="/2019/11/30/Machine_Learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%888-K%E5%9D%87%E5%80%BC%E8%81%9A%E7%B1%BB%EF%BC%89/" rel="prev" title="《机器学习实战》《西瓜书》笔记（八）- K均值聚类">
-                                  
-                                      《机器学习实战》《西瓜书》笔记（八）- K均值聚类
-                                  
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/ML/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> ML</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
               
           </div>
       
@@ -475,7 +556,7 @@
 
   <script>
     window.subData = {
-      title: 'Hello World',
+      title: 'Hexo + GithubPages 搭建个人博客与网站！',
       tools: true
     }
   </script>
@@ -589,7 +670,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo-GithubPages-搭建个人博客与网站！"><span class="toc-text">Hexo + GithubPages 搭建个人博客与网站！</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#博客搭建"><span class="toc-text">博客搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备环境"><span class="toc-text">准备环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Github实时搭建"><span class="toc-text">Github实时搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加域名，创建个人网站"><span class="toc-text">添加域名，创建个人网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装必要的插件"><span class="toc-text">安装必要的插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#站点配置-hexo根目录下config-yml文件"><span class="toc-text">站点配置-hexo根目录下config.yml文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题优化之自定样式-cdn的使用"><span class="toc-text">主题优化之自定样式 cdn的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题优化之评论系统-valine的使用"><span class="toc-text">主题优化之评论系统 valine的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题优化之加入萌萌哒表情"><span class="toc-text">主题优化之加入萌萌哒表情</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
