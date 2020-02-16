@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>softmax与分类模型 | 问渠哪得清如许？</title>
+  <title>Softmax与分类模型 | 问渠哪得清如许？</title>
   
   
   <meta name="description" content="https://img.vim-cn.com/33/461edfd8f8283ad38990aa7a83131b4494eb2c.jpg">
@@ -177,6 +177,28 @@
 		<nav class="menu navgation">
       <ul>
         
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="blogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+       
       </ul>
 		</nav>
     </header>
@@ -203,8 +225,8 @@
         
   
     <h1 class="title">
-      <a href="/2020/02/12/Deep_learning/Softmax%E4%B8%8E%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B/">
-        softmax与分类模型
+      <a href="/2020/02/13/Deep_learning/Softmax%E4%B8%8E%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B/">
+        Softmax与分类模型
       </a>
     </h1>
   
@@ -235,7 +257,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-12</p>
+    <p>2020-02-13</p>
   </a>
 </div>
 
@@ -245,9 +267,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/java/' rel="nofollow">
+    <a href='/categories/deep-learning/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>java</p>
+      <p>deep_learning</p>
     </a>
   </div>
 
@@ -297,41 +319,57 @@
 <h2 id="分类问题"><a href="#分类问题" class="headerlink" title="分类问题"></a>分类问题</h2><p>让我们考虑一个简单的图像分类问题，其输入图像的高和宽均为2像素，且色彩为灰度。这样每个像素值都可以用一个标量表示。我们将图像中的4像素分别记为$x_1, x_2, x_3, x_4$。假设训练数据集中图像的真实标签为狗、猫或鸡（假设可以用4像素表示出这3种动物），这些标签分别对应离散值$y_1, y_2, y_3$。</p>
 <p>我们通常使用离散的数值来表示类别，例如$y_1=1, y_2=2, y_3=3$。如此，一张图像的标签为1、2和3这3个数值中的一个。虽然我们仍然可以使用回归模型来进行建模，并将预测值就近定点化到1、2和3这3个离散值之一，但这种连续值到离散值的转化通常会影响到分类质量。因此我们一般使用更加适合离散值输出的模型来解决分类问题。</p>
 <h2 id="softmax回归模型"><a href="#softmax回归模型" class="headerlink" title="softmax回归模型"></a>softmax回归模型</h2><p>softmax回归跟线性回归一样将输入特征与权重做线性叠加。与线性回归的一个主要不同在于，softmax回归的输出值个数等于标签里的类别数。因为一共有4种特征和3种输出动物类别，所以权重包含12个标量（带下标的$w$）、偏差包含3个标量（带下标的$b$），且对每个输入计算$o_1, o_2, o_3$这3个输出：</p>
-<p>$$<br>\begin{aligned}<br>o_1 &amp;= x_1 w_{11} + x_2 w_{21} + x_3 w_{31} + x_4 w_{41} + b_1,\<br>o_2 &amp;= x_1 w_{12} + x_2 w_{22} + x_3 w_{32} + x_4 w_{42} + b_2,\<br>o_3 &amp;= x_1 w_{13} + x_2 w_{23} + x_3 w_{33} + x_4 w_{43} + b_3.<br>\end{aligned}<br>$$</p>
-<p>图3.2用神经网络图描绘了上面的计算。softmax回归同线性回归一样，也是一个单层神经网络。由于每个输出$o_1, o_2, o_3$的计算都要依赖于所有的输入$x_1, x_2, x_3, x_4$，softmax回归的输出层也是一个全连接层。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+o_1 &= x_1 w_{11} + x_2 w_{21} + x_3 w_{31} + x_4 w_{41} + b_1,\\
+o_2 &= x_1 w_{12} + x_2 w_{22} + x_3 w_{32} + x_4 w_{42} + b_2,\\
+o_3 &= x_1 w_{13} + x_2 w_{23} + x_3 w_{33} + x_4 w_{43} + b_3.
+\end{aligned}</script><p>图3.2用神经网络图描绘了上面的计算。softmax回归同线性回归一样，也是一个单层神经网络。由于每个输出$o_1, o_2, o_3$的计算都要依赖于所有的输入$x_1, x_2, x_3, x_4$，softmax回归的输出层也是一个全连接层。</p>
 <p><img src="../img/softmaxreg.svg" alt="softmax回归是一个单层神经网络"></p>
 <h3 id="softmax运算"><a href="#softmax运算" class="headerlink" title="softmax运算"></a>softmax运算</h3><p>既然分类问题需要得到离散的预测输出，一个简单的办法是将输出值$o_i$当作预测类别是$i$的置信度，并将值最大的输出所对应的类作为预测输出，即输出$\operatorname*{argmax}_i o_i$。例如，如果$o_1,o_2,o_3$分别为$0.1,10,0.1$，由于$o_2$最大，那么预测类别为2，其代表猫。</p>
 <p>然而，直接使用输出层的输出有两个问题。一方面，由于输出层的输出值的范围不确定，我们难以直观上判断这些值的意义。例如，刚才举的例子中的输出值10表示“很置信”图像类别为猫，因为该输出值是其他两类的输出值的100倍。但如果$o_1=o_3=10^3$，那么输出值10却又表示图像类别为猫的概率很低。另一方面，由于真实标签是离散值，这些离散值与不确定范围的输出值之间的误差难以衡量。</p>
 <p>softmax运算符（softmax operator）解决了以上两个问题。它通过下式将输出值变换成值为正且和为1的概率分布：</p>
-<p>$$\hat{y}_1, \hat{y}_2, \hat{y}_3 = \text{softmax}(o_1, o_2, o_3),$$</p>
-<p>其中</p>
-<p>$$<br>\hat{y}<em>1 = \frac{ \exp(o_1)}{\sum</em>{i=1}^3 \exp(o_i)},\quad<br>\hat{y}<em>2 = \frac{ \exp(o_2)}{\sum</em>{i=1}^3 \exp(o_i)},\quad<br>\hat{y}<em>3 = \frac{ \exp(o_3)}{\sum</em>{i=1}^3 \exp(o_i)}.<br>$$</p>
-<p>容易看出$\hat{y}_1 + \hat{y}_2 + \hat{y}_3 = 1$且$0 \leq \hat{y}_1, \hat{y}_2, \hat{y}_3 \leq 1$，因此$\hat{y}_1, \hat{y}_2, \hat{y}_3$是一个合法的概率分布。这时候，如果$\hat{y}_2=0.8$，不管$\hat{y}_1$和$\hat{y}_3$的值是多少，我们都知道图像类别为猫的概率是80%。此外，我们注意到</p>
-<p>$$\operatorname<em>{argmax}_i o_i = \operatorname</em>{argmax}_i \hat y_i,$$</p>
-<p>因此softmax运算不改变预测类别输出。</p>
+<script type="math/tex; mode=display">\hat{y}_1, \hat{y}_2, \hat{y}_3 = \text{softmax}(o_1, o_2, o_3),</script><p>其中</p>
+<script type="math/tex; mode=display">
+\hat{y}_1 = \frac{ \exp(o_1)}{\sum_{i=1}^3 \exp(o_i)},\quad
+\hat{y}_2 = \frac{ \exp(o_2)}{\sum_{i=1}^3 \exp(o_i)},\quad
+\hat{y}_3 = \frac{ \exp(o_3)}{\sum_{i=1}^3 \exp(o_i)}.</script><p>容易看出$\hat{y}_1 + \hat{y}_2 + \hat{y}_3 = 1$且$0 \leq \hat{y}_1, \hat{y}_2, \hat{y}_3 \leq 1$，因此$\hat{y}_1, \hat{y}_2, \hat{y}_3$是一个合法的概率分布。这时候，如果$\hat{y}_2=0.8$，不管$\hat{y}_1$和$\hat{y}_3$的值是多少，我们都知道图像类别为猫的概率是80%。此外，我们注意到</p>
+<script type="math/tex; mode=display">\operatorname*{argmax}_i o_i = \operatorname*{argmax}_i \hat y_i,</script><p>因此softmax运算不改变预测类别输出。</p>
 <h2 id="单样本分类的矢量计算表达式"><a href="#单样本分类的矢量计算表达式" class="headerlink" title="单样本分类的矢量计算表达式"></a>单样本分类的矢量计算表达式</h2><p>为了提高计算效率，我们可以将单样本分类通过矢量计算来表达。在上面的图像分类问题中，假设softmax回归的权重和偏差参数分别为</p>
-<p>$$<br>\boldsymbol{W} =<br>\begin{bmatrix}<br>    w_{11} &amp; w_{12} &amp; w_{13} \<br>    w_{21} &amp; w_{22} &amp; w_{23} \<br>    w_{31} &amp; w_{32} &amp; w_{33} \<br>    w_{41} &amp; w_{42} &amp; w_{43}<br>\end{bmatrix},\quad<br>\boldsymbol{b} =<br>\begin{bmatrix}<br>    b_1 &amp; b_2 &amp; b_3<br>\end{bmatrix},<br>$$</p>
-<p>设高和宽分别为2个像素的图像样本$i$的特征为</p>
-<p>$$\boldsymbol{x}^{(i)} = \begin{bmatrix}x_1^{(i)} &amp; x_2^{(i)} &amp; x_3^{(i)} &amp; x_4^{(i)}\end{bmatrix},$$</p>
-<p>输出层的输出为</p>
-<p>$$\boldsymbol{o}^{(i)} = \begin{bmatrix}o_1^{(i)} &amp; o_2^{(i)} &amp; o_3^{(i)}\end{bmatrix},$$</p>
-<p>预测为狗、猫或鸡的概率分布为</p>
-<p>$$\boldsymbol{\hat{y}}^{(i)} = \begin{bmatrix}\hat{y}_1^{(i)} &amp; \hat{y}_2^{(i)} &amp; \hat{y}_3^{(i)}\end{bmatrix}.$$</p>
-<p>softmax回归对样本$i$分类的矢量计算表达式为</p>
-<p>$$<br>\begin{aligned}<br>\boldsymbol{o}^{(i)} &amp;= \boldsymbol{x}^{(i)} \boldsymbol{W} + \boldsymbol{b},\<br>\boldsymbol{\hat{y}}^{(i)} &amp;= \text{softmax}(\boldsymbol{o}^{(i)}).<br>\end{aligned}<br>$$</p>
-<h2 id="小批量样本分类的矢量计算表达式"><a href="#小批量样本分类的矢量计算表达式" class="headerlink" title="小批量样本分类的矢量计算表达式"></a>小批量样本分类的矢量计算表达式</h2><p>为了进一步提升计算效率，我们通常对小批量数据做矢量计算。广义上讲，给定一个小批量样本，其批量大小为$n$，输入个数（特征数）为$d$，输出个数（类别数）为$q$。设批量特征为$\boldsymbol{X} \in \mathbb{R}^{n \times d}$。假设softmax回归的权重和偏差参数分别为$\boldsymbol{W} \in \mathbb{R}^{d \times q}$和$\boldsymbol{b} \in \mathbb{R}^{1 \times q}$。softmax回归的矢量计算表达式为</p>
-<p>$$<br>\begin{aligned}<br>\boldsymbol{O} &amp;= \boldsymbol{X} \boldsymbol{W} + \boldsymbol{b},\<br>\boldsymbol{\hat{Y}} &amp;= \text{softmax}(\boldsymbol{O}),<br>\end{aligned}<br>$$</p>
-<p>其中的加法运算使用了广播机制，$\boldsymbol{O}, \boldsymbol{\hat{Y}} \in \mathbb{R}^{n \times q}$且这两个矩阵的第$i$行分别为样本$i$的输出$\boldsymbol{o}^{(i)}$和概率分布$\boldsymbol{\hat{y}}^{(i)}$。</p>
+<script type="math/tex; mode=display">
+\boldsymbol{W} = 
+\begin{bmatrix}
+    w_{11} & w_{12} & w_{13} \\
+    w_{21} & w_{22} & w_{23} \\
+    w_{31} & w_{32} & w_{33} \\
+    w_{41} & w_{42} & w_{43}
+\end{bmatrix},\quad
+\boldsymbol{b} = 
+\begin{bmatrix}
+    b_1 & b_2 & b_3
+\end{bmatrix},</script><p>设高和宽分别为2个像素的图像样本$i$的特征为</p>
+<script type="math/tex; mode=display">\boldsymbol{x}^{(i)} = \begin{bmatrix}x_1^{(i)} & x_2^{(i)} & x_3^{(i)} & x_4^{(i)}\end{bmatrix},</script><p>输出层的输出为</p>
+<script type="math/tex; mode=display">\boldsymbol{o}^{(i)} = \begin{bmatrix}o_1^{(i)} & o_2^{(i)} & o_3^{(i)}\end{bmatrix},</script><p>预测为狗、猫或鸡的概率分布为</p>
+<script type="math/tex; mode=display">\boldsymbol{\hat{y}}^{(i)} = \begin{bmatrix}\hat{y}_1^{(i)} & \hat{y}_2^{(i)} & \hat{y}_3^{(i)}\end{bmatrix}.</script><p>softmax回归对样本$i$分类的矢量计算表达式为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\boldsymbol{o}^{(i)} &= \boldsymbol{x}^{(i)} \boldsymbol{W} + \boldsymbol{b},\\
+\boldsymbol{\hat{y}}^{(i)} &= \text{softmax}(\boldsymbol{o}^{(i)}).
+\end{aligned}</script><h2 id="小批量样本分类的矢量计算表达式"><a href="#小批量样本分类的矢量计算表达式" class="headerlink" title="小批量样本分类的矢量计算表达式"></a>小批量样本分类的矢量计算表达式</h2><p>为了进一步提升计算效率，我们通常对小批量数据做矢量计算。广义上讲，给定一个小批量样本，其批量大小为$n$，输入个数（特征数）为$d$，输出个数（类别数）为$q$。设批量特征为$\boldsymbol{X} \in \mathbb{R}^{n \times d}$。假设softmax回归的权重和偏差参数分别为$\boldsymbol{W} \in \mathbb{R}^{d \times q}$和$\boldsymbol{b} \in \mathbb{R}^{1 \times q}$。softmax回归的矢量计算表达式为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\boldsymbol{O} &= \boldsymbol{X} \boldsymbol{W} + \boldsymbol{b},\\
+\boldsymbol{\hat{Y}} &= \text{softmax}(\boldsymbol{O}),
+\end{aligned}</script><p>其中的加法运算使用了广播机制，$\boldsymbol{O}, \boldsymbol{\hat{Y}} \in \mathbb{R}^{n \times q}$且这两个矩阵的第$i$行分别为样本$i$的输出$\boldsymbol{o}^{(i)}$和概率分布$\boldsymbol{\hat{y}}^{(i)}$。</p>
 <h2 id="交叉熵损失函数"><a href="#交叉熵损失函数" class="headerlink" title="交叉熵损失函数"></a>交叉熵损失函数</h2><p>前面提到，使用softmax运算后可以更方便地与离散标签计算误差。我们已经知道，softmax运算将输出变换成一个合法的类别预测分布。实际上，真实标签也可以用类别分布表达：对于样本$i$，我们构造向量$\boldsymbol{y}^{(i)}\in \mathbb{R}^{q}$ ，使其第$y^{(i)}$（样本$i$类别的离散数值）个元素为1，其余为0。这样我们的训练目标可以设为使预测概率分布$\boldsymbol{\hat y}^{(i)}$尽可能接近真实的标签概率分布$\boldsymbol{y}^{(i)}$。</p>
 <p>我们可以像线性回归那样使用平方损失函数$|\boldsymbol{\hat y}^{(i)}-\boldsymbol{y}^{(i)}|^2/2$。然而，想要预测分类结果正确，我们其实并不需要预测概率完全等于标签概率。例如，在图像分类的例子里，如果$y^{(i)}=3$，那么我们只需要$\hat{y}^{(i)}_3$比其他两个预测值$\hat{y}^{(i)}_1$和$\hat{y}^{(i)}_2$大就行了。即使$\hat{y}^{(i)}_3$值为0.6，不管其他两个预测值为多少，类别预测均正确。而平方损失则过于严格，例如$\hat y^{(i)}_1=\hat y^{(i)}_2=0.2$比$\hat y^{(i)}_1=0, \hat y^{(i)}_2=0.4$的损失要小很多，虽然两者都有同样正确的分类预测结果。</p>
 <p>改善上述问题的一个方法是使用更适合衡量两个概率分布差异的测量函数。其中，交叉熵（cross entropy）是一个常用的衡量方法：</p>
-<p>$$H\left(\boldsymbol y^{(i)}, \boldsymbol {\hat y}^{(i)}\right ) = -\sum_{j=1}^q y_j^{(i)} \log \hat y_j^{(i)},$$</p>
-<p>其中带下标的$y_j^{(i)}$是向量$\boldsymbol y^{(i)}$中非0即1的元素，需要注意将它与样本$i$类别的离散数值，即不带下标的$y^{(i)}$区分。在上式中，我们知道向量$\boldsymbol y^{(i)}$中只有第$y^{(i)}$个元素$y^{(i)}<em>{y^{(i)}}$为1，其余全为0，于是$H(\boldsymbol y^{(i)}, \boldsymbol {\hat y}^{(i)}) = -\log \hat y</em>{y^{(i)}}^{(i)}$。也就是说，交叉熵只关心对正确类别的预测概率，因为只要其值足够大，就可以确保分类结果正确。当然，遇到一个样本有多个标签时，例如图像里含有不止一个物体时，我们并不能做这一步简化。但即便对于这种情况，交叉熵同样只关心对图像中出现的物体类别的预测概率。</p>
-<p>假设训练数据集的样本数为$n$，交叉熵损失函数定义为<br>$$\ell(\boldsymbol{\Theta}) = \frac{1}{n} \sum_{i=1}^n H\left(\boldsymbol y^{(i)}, \boldsymbol {\hat y}^{(i)}\right ),$$</p>
-<p>其中$\boldsymbol{\Theta}$代表模型参数。同样地，如果每个样本只有一个标签，那么交叉熵损失可以简写成$\ell(\boldsymbol{\Theta}) = -(1/n)  \sum_{i=1}^n \log \hat y_{y^{(i)}}^{(i)}$。从另一个角度来看，我们知道最小化$\ell(\boldsymbol{\Theta})$等价于最大化$\exp(-n\ell(\boldsymbol{\Theta}))=\prod_{i=1}^n \hat y_{y^{(i)}}^{(i)}$，即最小化交叉熵损失函数等价于最大化训练数据集所有标签类别的联合预测概率。</p>
+<script type="math/tex; mode=display">H\left(\boldsymbol y^{(i)}, \boldsymbol {\hat y}^{(i)}\right ) = -\sum_{j=1}^q y_j^{(i)} \log \hat y_j^{(i)},</script><p>其中带下标的$y_j^{(i)}$是向量$\boldsymbol y^{(i)}$中非0即1的元素，需要注意将它与样本$i$类别的离散数值，即不带下标的$y^{(i)}$区分。在上式中，我们知道向量$\boldsymbol y^{(i)}$中只有第$y^{(i)}$个元素$y^{(i)}_{y^{(i)}}$为1，其余全为0，于是$H(\boldsymbol y^{(i)}, \boldsymbol {\hat y}^{(i)}) = -\log \hat y_{y^{(i)}}^{(i)}$。也就是说，交叉熵只关心对正确类别的预测概率，因为只要其值足够大，就可以确保分类结果正确。当然，遇到一个样本有多个标签时，例如图像里含有不止一个物体时，我们并不能做这一步简化。但即便对于这种情况，交叉熵同样只关心对图像中出现的物体类别的预测概率。</p>
+<p>假设训练数据集的样本数为$n$，交叉熵损失函数定义为</p>
+<script type="math/tex; mode=display">\ell(\boldsymbol{\Theta}) = \frac{1}{n} \sum_{i=1}^n H\left(\boldsymbol y^{(i)}, \boldsymbol {\hat y}^{(i)}\right ),</script><p>其中$\boldsymbol{\Theta}$代表模型参数。同样地，如果每个样本只有一个标签，那么交叉熵损失可以简写成$\ell(\boldsymbol{\Theta}) = -(1/n)  \sum_{i=1}^n \log \hat y_{y^{(i)}}^{(i)}$。从另一个角度来看，我们知道最小化$\ell(\boldsymbol{\Theta})$等价于最大化$\exp(-n\ell(\boldsymbol{\Theta}))=\prod_{i=1}^n \hat y_{y^{(i)}}^{(i)}$，即最小化交叉熵损失函数等价于最大化训练数据集所有标签类别的联合预测概率。</p>
 <h1 id="softmax的pytorch实现"><a href="#softmax的pytorch实现" class="headerlink" title="softmax的pytorch实现"></a>softmax的pytorch实现</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 加载各种包或者模块</span></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">from</span> torch.nn <span class="keyword">import</span> init</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.append(<span class="string">r"D:\Documents\learning"</span>)</span><br><span class="line"><span class="comment"># import d2lzh as d2l</span></span><br><span class="line"></span><br><span class="line">print(torch.__version__)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成数据集</span></span><br><span class="line">batch_size = <span class="number">256</span></span><br><span class="line"><span class="comment"># train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size, root='/home/kesci/input/FashionMNIST2065')</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义网络模型</span></span><br><span class="line">num_inputs = <span class="number">784</span></span><br><span class="line">num_outputs = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinearNet</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, num_inputs, num_outputs)</span>:</span></span><br><span class="line">        super(LinearNet, self).__init__()</span><br><span class="line">        self.linear = nn.Linear(num_inputs, num_outputs)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span> <span class="comment"># x 的形状: (batch, 1, 28, 28)</span></span><br><span class="line">        y = self.linear(x.view(x.shape[<span class="number">0</span>], <span class="number">-1</span>))</span><br><span class="line">        <span class="keyword">return</span> y</span><br><span class="line">    </span><br><span class="line"><span class="comment"># net = LinearNet(num_inputs, num_outputs)</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FlattenLayer</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super(FlattenLayer, self).__init__()</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span> <span class="comment"># x 的形状: (batch, *, *, ...)</span></span><br><span class="line">        <span class="keyword">return</span> x.view(x.shape[<span class="number">0</span>], <span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line">net = nn.Sequential(</span><br><span class="line">        <span class="comment"># FlattenLayer(),</span></span><br><span class="line">        <span class="comment"># LinearNet(num_inputs, num_outputs) </span></span><br><span class="line">        OrderedDict([</span><br><span class="line">           (<span class="string">'flatten'</span>, FlattenLayer()),</span><br><span class="line">           (<span class="string">'linear'</span>, nn.Linear(num_inputs, num_outputs))]) <span class="comment"># 或者写成我们自己定义的 LinearNet(num_inputs, num_outputs) 也可以</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化模型参数</span></span><br><span class="line">init.normal_(net.linear.weight, mean=<span class="number">0</span>, std=<span class="number">0.01</span>)</span><br><span class="line">init.constant_(net.linear.bias, val=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义损失函数</span></span><br><span class="line">loss = nn.CrossEntropyLoss() <span class="comment"># 下面是他的函数原型</span></span><br><span class="line"><span class="comment"># class torch.nn.CrossEntropyLoss(weight=None, size_average=None, ignore_index=-100, reduce=None, reduction='mean')</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义优化函数</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>1.3.1</code></pre><h2 id="训练模型"><a href="#训练模型" class="headerlink" title="训练模型"></a>训练模型</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">num_epochs = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train_ch3</span><span class="params">(net, train_iter, test_iter, loss, num_epochs, batch_size,</span></span></span><br><span class="line"><span class="function"><span class="params">              params=None, lr=None, trainer=None)</span>:</span></span><br><span class="line">    <span class="string">"""Train and evaluate a model with CPU."""</span></span><br><span class="line">    <span class="keyword">for</span> epoch <span class="keyword">in</span> range(num_epochs):</span><br><span class="line">        train_l_sum, train_acc_sum, n = <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> X, y <span class="keyword">in</span> train_iter:</span><br><span class="line">            <span class="keyword">with</span> autograd.record():</span><br><span class="line">                y_hat = net(X)</span><br><span class="line">                l = loss(y_hat, y).sum()</span><br><span class="line">            l.backward()</span><br><span class="line">            <span class="keyword">if</span> trainer <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">                sgd(params, lr, batch_size)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                trainer.step(batch_size)</span><br><span class="line">            y = y.astype(<span class="string">'float32'</span>)</span><br><span class="line">            train_l_sum += l.asscalar()</span><br><span class="line">            train_acc_sum += (y_hat.argmax(axis=<span class="number">1</span>) == y).sum().asscalar()</span><br><span class="line">            n += y.size</span><br><span class="line">        test_acc = evaluate_accuracy(test_iter, net)</span><br><span class="line">        print(<span class="string">'epoch %d, loss %.4f, train acc %.3f, test acc %.3f'</span></span><br><span class="line">              % (epoch + <span class="number">1</span>, train_l_sum / n, train_acc_sum / n, test_acc))</span><br><span class="line"></span><br><span class="line">train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, <span class="literal">None</span>, <span class="literal">None</span>, optimizer)</span><br></pre></td></tr></table></figure>
+<pre><code>1.3.1
+</code></pre><h2 id="训练模型"><a href="#训练模型" class="headerlink" title="训练模型"></a>训练模型</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">num_epochs = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train_ch3</span><span class="params">(net, train_iter, test_iter, loss, num_epochs, batch_size,</span></span></span><br><span class="line"><span class="function"><span class="params">              params=None, lr=None, trainer=None)</span>:</span></span><br><span class="line">    <span class="string">"""Train and evaluate a model with CPU."""</span></span><br><span class="line">    <span class="keyword">for</span> epoch <span class="keyword">in</span> range(num_epochs):</span><br><span class="line">        train_l_sum, train_acc_sum, n = <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> X, y <span class="keyword">in</span> train_iter:</span><br><span class="line">            <span class="keyword">with</span> autograd.record():</span><br><span class="line">                y_hat = net(X)</span><br><span class="line">                l = loss(y_hat, y).sum()</span><br><span class="line">            l.backward()</span><br><span class="line">            <span class="keyword">if</span> trainer <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">                sgd(params, lr, batch_size)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                trainer.step(batch_size)</span><br><span class="line">            y = y.astype(<span class="string">'float32'</span>)</span><br><span class="line">            train_l_sum += l.asscalar()</span><br><span class="line">            train_acc_sum += (y_hat.argmax(axis=<span class="number">1</span>) == y).sum().asscalar()</span><br><span class="line">            n += y.size</span><br><span class="line">        test_acc = evaluate_accuracy(test_iter, net)</span><br><span class="line">        print(<span class="string">'epoch %d, loss %.4f, train acc %.3f, test acc %.3f'</span></span><br><span class="line">              % (epoch + <span class="number">1</span>, train_l_sum / n, train_acc_sum / n, test_acc))</span><br><span class="line"></span><br><span class="line">train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, <span class="literal">None</span>, <span class="literal">None</span>, optimizer)</span><br></pre></td></tr></table></figure>
 
       </div>
       
@@ -344,10 +382,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-12T00:00:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-13T00:00:00+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Feb 12, 2020</p>
+    <p>updated at Feb 13, 2020</p>
   </a>
 </div>
 
@@ -369,7 +407,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://shyshy903.github.io/2020/02/12/Deep_learning/Softmax%E4%B8%8E%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B/&title=softmax与分类模型 | 问渠哪得清如许？&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://shyshy903.github.io/2020/02/13/Deep_learning/Softmax%E4%B8%8E%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B/&title=Softmax与分类模型 | 问渠哪得清如许？&summary="
           
           >
           
@@ -381,7 +419,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://shyshy903.github.io/2020/02/12/Deep_learning/Softmax%E4%B8%8E%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B/&title=softmax与分类模型 | 问渠哪得清如许？&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://shyshy903.github.io/2020/02/13/Deep_learning/Softmax%E4%B8%8E%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B/&title=Softmax与分类模型 | 问渠哪得清如许？&summary="
           
           >
           
@@ -393,7 +431,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://shyshy903.github.io/2020/02/12/Deep_learning/Softmax%E4%B8%8E%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B/&title=softmax与分类模型 | 问渠哪得清如许？&summary="
+          href="http://service.weibo.com/share/share.php?url=https://shyshy903.github.io/2020/02/13/Deep_learning/Softmax%E4%B8%8E%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B/&title=Softmax与分类模型 | 问渠哪得清如许？&summary="
           
           >
           
@@ -494,7 +532,7 @@
 
   <script>
     window.subData = {
-      title: 'softmax与分类模型',
+      title: 'Softmax与分类模型',
       tools: true
     }
   </script>
@@ -573,11 +611,11 @@
         
           <li><a class="flat-box" title="/categories/SQL/" href="/categories/SQL/"><div class='name'>SQL</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/deep-learning/" href="/categories/deep-learning/"><div class='name'>deep_learning</div><div class='badge'>(3)</div></a></li>
+          <li><a class="flat-box" title="/categories/deep-learning/" href="/categories/deep-learning/"><div class='name'>deep_learning</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/java/" href="/categories/java/"><div class='name'>java</div><div class='badge'>(6)</div></a></li>
+          <li><a class="flat-box" title="/categories/java/" href="/categories/java/"><div class='name'>java</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(1)</div></a></li>
         
@@ -628,7 +666,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/tags/DL/" style="font-size: 19px; color: #777">DL</a> <a href="/tags/ML/" style="font-size: 24px; color: #555">ML</a> <a href="/tags/SQL/" style="font-size: 16.5px; color: #888">SQL</a> <a href="/tags/color/" style="font-size: 14px; color: #999">color</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/java/" style="font-size: 21.5px; color: #666">java</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/" style="font-size: 14px; color: #999">量子计算</a>
+      <a href="/tags/DL/" style="font-size: 21.5px; color: #666">DL</a> <a href="/tags/ML/" style="font-size: 24px; color: #555">ML</a> <a href="/tags/SQL/" style="font-size: 16.5px; color: #888">SQL</a> <a href="/tags/color/" style="font-size: 14px; color: #999">color</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/java/" style="font-size: 19px; color: #777">java</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/" style="font-size: 14px; color: #999">量子计算</a>
     </div>
   </section>
 

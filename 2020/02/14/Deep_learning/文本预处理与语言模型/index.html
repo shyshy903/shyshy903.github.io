@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Deep_learning/文本预处理与语言模型 | 问渠哪得清如许？</title>
+  <title>文本预处理与语言模型 | 问渠哪得清如许？</title>
   
   
   <meta name="description" content="https://img.vim-cn.com/33/461edfd8f8283ad38990aa7a83131b4494eb2c.jpg">
@@ -177,6 +177,28 @@
 		<nav class="menu navgation">
       <ul>
         
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="blogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+       
       </ul>
 		</nav>
     </header>
@@ -204,7 +226,7 @@
   
     <h1 class="title">
       <a href="/2020/02/14/Deep_learning/%E6%96%87%E6%9C%AC%E9%A2%84%E5%A4%84%E7%90%86%E4%B8%8E%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/">
-        Deep_learning/文本预处理与语言模型
+        文本预处理与语言模型
       </a>
     </h1>
   
@@ -243,6 +265,14 @@
         
           
             
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/deep-learning/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>deep_learning</p>
+    </a>
+  </div>
+
 
           
         
@@ -292,16 +322,11 @@
 <li>将文本从词的序列转换为索引的序列，方便输入模型</li>
 </ol>
 <h2 id="读入文本"><a href="#读入文本" class="headerlink" title="读入文本"></a>读入文本</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_time_machine</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'/home/kesci/input/timemachine7163/timemachine.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        lines = [re.sub(<span class="string">'[^a-z]+'</span>, <span class="string">' '</span>, line.strip().lower()) <span class="keyword">for</span> line <span class="keyword">in</span> f]</span><br><span class="line">    <span class="keyword">return</span> lines</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lines = read_time_machine()</span><br><span class="line">print(<span class="string">'# sentences %d'</span> % len(lines))</span><br></pre></td></tr></table></figure>
-
 <h2 id="分词"><a href="#分词" class="headerlink" title="分词"></a>分词</h2><p>将一个句子划分为若干个<code>token</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tokenize</span><span class="params">(sentences, token=<span class="string">'word'</span>)</span>:</span></span><br><span class="line">    <span class="string">"""Split sentences into word or char tokens"""</span></span><br><span class="line">    <span class="keyword">if</span> token == <span class="string">'word'</span>:</span><br><span class="line">        <span class="keyword">return</span> [sentence.split(<span class="string">' '</span>) <span class="keyword">for</span> sentence <span class="keyword">in</span> sentences]</span><br><span class="line">    <span class="keyword">elif</span> token == <span class="string">'char'</span>:</span><br><span class="line">        <span class="keyword">return</span> [list(sentence) <span class="keyword">for</span> sentence <span class="keyword">in</span> sentences]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'ERROR: unkown token type '</span>+token)</span><br><span class="line"></span><br><span class="line">tokens = tokenize(lines)</span><br><span class="line">tokens[<span class="number">0</span>:<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-
 <h2 id="建立字典"><a href="#建立字典" class="headerlink" title="建立字典"></a>建立字典</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vocab</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, tokens, min_freq=<span class="number">0</span>, use_special_tokens=False)</span>:</span></span><br><span class="line">        counter = count_corpus(tokens)  <span class="comment"># : </span></span><br><span class="line">        self.token_freqs = list(counter.items())</span><br><span class="line">        self.idx_to_token = []</span><br><span class="line">        <span class="keyword">if</span> use_special_tokens:</span><br><span class="line">            <span class="comment"># padding, begin of sentence, end of sentence, unknown</span></span><br><span class="line">            self.pad, self.bos, self.eos, self.unk = (<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">            self.idx_to_token += [<span class="string">''</span>, <span class="string">''</span>, <span class="string">''</span>, <span class="string">''</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.unk = <span class="number">0</span></span><br><span class="line">            self.idx_to_token += [<span class="string">''</span>]</span><br><span class="line">        self.idx_to_token += [token <span class="keyword">for</span> token, freq <span class="keyword">in</span> self.token_freqs</span><br><span class="line">                        <span class="keyword">if</span> freq &gt;= min_freq <span class="keyword">and</span> token <span class="keyword">not</span> <span class="keyword">in</span> self.idx_to_token]</span><br><span class="line">        self.token_to_idx = dict()</span><br><span class="line">        <span class="keyword">for</span> idx, token <span class="keyword">in</span> enumerate(self.idx_to_token):</span><br><span class="line">            self.token_to_idx[token] = idx</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> len(self.idx_to_token)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, tokens)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> isinstance(tokens, (list, tuple)):</span><br><span class="line">            <span class="keyword">return</span> self.token_to_idx.get(tokens, self.unk)</span><br><span class="line">        <span class="keyword">return</span> [self.__getitem__(token) <span class="keyword">for</span> token <span class="keyword">in</span> tokens]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">to_tokens</span><span class="params">(self, indices)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> isinstance(indices, (list, tuple)):</span><br><span class="line">            <span class="keyword">return</span> self.idx_to_token[indices]</span><br><span class="line">        <span class="keyword">return</span> [self.idx_to_token[index] <span class="keyword">for</span> index <span class="keyword">in</span> indices]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">count_corpus</span><span class="params">(sentences)</span>:</span></span><br><span class="line">    tokens = [tk <span class="keyword">for</span> st <span class="keyword">in</span> sentences <span class="keyword">for</span> tk <span class="keyword">in</span> st]</span><br><span class="line">    <span class="keyword">return</span> collections.Counter(tokens)  <span class="comment"># 返回一个字典，记录每个词的出现次数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将词转化为索引</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">8</span>, <span class="number">10</span>):</span><br><span class="line">    print(<span class="string">'words:'</span>, tokens[i])</span><br><span class="line">    print(<span class="string">'indices:'</span>, vocab[tokens[i]])</span><br></pre></td></tr></table></figure>
-
 <h2 id="用现有工具包分词"><a href="#用现有工具包分词" class="headerlink" title="用现有工具包分词"></a>用现有工具包分词</h2><h3 id="NLTK"><a href="#NLTK" class="headerlink" title="NLTK"></a>NLTK</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">text = <span class="string">"Mr. Chen doesn't agree with my suggestion."</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> nltk.tokenize <span class="keyword">import</span> word_tokenize</span><br><span class="line"><span class="keyword">from</span> nltk <span class="keyword">import</span> data</span><br><span class="line">data.path.append(<span class="string">'/home/kesci/input/nltk_data3784/nltk_data'</span>)</span><br><span class="line">print(word_tokenize(text))</span><br></pre></td></tr></table></figure>
-
 <h3 id="SPACY"><a href="#SPACY" class="headerlink" title="SPACY"></a>SPACY</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> spacy</span><br><span class="line">nlp = spacy.load(<span class="string">'en_core_web_sm'</span>)</span><br><span class="line">doc = nlp(text)</span><br><span class="line">print([token.text <span class="keyword">for</span> token <span class="keyword">in</span> doc])</span><br></pre></td></tr></table></figure>
-
 <h1 id="语言模型（基于统计的语言模型）"><a href="#语言模型（基于统计的语言模型）" class="headerlink" title="语言模型（基于统计的语言模型）"></a>语言模型（基于统计的语言模型）</h1><p><img src="https://img.vim-cn.com/74/bb98fdc35dd04377837535271dcebd321dfa19.png" alt=""></p>
 <h1 id="n元语法"><a href="#n元语法" class="headerlink" title="n元语法"></a>n元语法</h1><p><img src="https://img.vim-cn.com/14/04dcd7cd184f97d2cbaed69a419d20bdd74c96.png" alt=""></p>
 <h2 id="相邻采样"><a href="#相邻采样" class="headerlink" title="相邻采样"></a>相邻采样</h2><p>在相邻采样中，相邻的两个随机小批量在原始序列上的位置相毗邻</p>
@@ -318,7 +343,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-14T17:16:06+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-14T00:00:00+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>updated at Feb 14, 2020</p>
@@ -329,6 +354,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/DL/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>DL</p></a></div>
+
 
         
       
@@ -340,7 +368,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://shyshy903.github.io/2020/02/14/Deep_learning/%E6%96%87%E6%9C%AC%E9%A2%84%E5%A4%84%E7%90%86%E4%B8%8E%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/&title=Deep_learning/文本预处理与语言模型 | 问渠哪得清如许？&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://shyshy903.github.io/2020/02/14/Deep_learning/%E6%96%87%E6%9C%AC%E9%A2%84%E5%A4%84%E7%90%86%E4%B8%8E%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/&title=文本预处理与语言模型 | 问渠哪得清如许？&summary="
           
           >
           
@@ -352,7 +380,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://shyshy903.github.io/2020/02/14/Deep_learning/%E6%96%87%E6%9C%AC%E9%A2%84%E5%A4%84%E7%90%86%E4%B8%8E%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/&title=Deep_learning/文本预处理与语言模型 | 问渠哪得清如许？&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://shyshy903.github.io/2020/02/14/Deep_learning/%E6%96%87%E6%9C%AC%E9%A2%84%E5%A4%84%E7%90%86%E4%B8%8E%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/&title=文本预处理与语言模型 | 问渠哪得清如许？&summary="
           
           >
           
@@ -364,7 +392,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://shyshy903.github.io/2020/02/14/Deep_learning/%E6%96%87%E6%9C%AC%E9%A2%84%E5%A4%84%E7%90%86%E4%B8%8E%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/&title=Deep_learning/文本预处理与语言模型 | 问渠哪得清如许？&summary="
+          href="http://service.weibo.com/share/share.php?url=https://shyshy903.github.io/2020/02/14/Deep_learning/%E6%96%87%E6%9C%AC%E9%A2%84%E5%A4%84%E7%90%86%E4%B8%8E%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/&title=文本预处理与语言模型 | 问渠哪得清如许？&summary="
           
           >
           
@@ -387,6 +415,25 @@
       
       
           <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                          <h4>
+                              <a href="/2020/02/16/Deep_learning/%E6%9C%BA%E5%99%A8%E7%BF%BB%E8%AF%91/" rel="prev" title="机器翻译基础">
+                                
+                                    机器翻译基础
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/DL/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> DL</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
               
               
                   <section class="next">
@@ -446,7 +493,7 @@
 
   <script>
     window.subData = {
-      title: 'Deep_learning/文本预处理与语言模型',
+      title: '文本预处理与语言模型',
       tools: true
     }
   </script>
@@ -525,11 +572,11 @@
         
           <li><a class="flat-box" title="/categories/SQL/" href="/categories/SQL/"><div class='name'>SQL</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/deep-learning/" href="/categories/deep-learning/"><div class='name'>deep_learning</div><div class='badge'>(3)</div></a></li>
+          <li><a class="flat-box" title="/categories/deep-learning/" href="/categories/deep-learning/"><div class='name'>deep_learning</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/java/" href="/categories/java/"><div class='name'>java</div><div class='badge'>(6)</div></a></li>
+          <li><a class="flat-box" title="/categories/java/" href="/categories/java/"><div class='name'>java</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(1)</div></a></li>
         
@@ -580,7 +627,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/tags/DL/" style="font-size: 19px; color: #777">DL</a> <a href="/tags/ML/" style="font-size: 24px; color: #555">ML</a> <a href="/tags/SQL/" style="font-size: 16.5px; color: #888">SQL</a> <a href="/tags/color/" style="font-size: 14px; color: #999">color</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/java/" style="font-size: 21.5px; color: #666">java</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/" style="font-size: 14px; color: #999">量子计算</a>
+      <a href="/tags/DL/" style="font-size: 21.5px; color: #666">DL</a> <a href="/tags/ML/" style="font-size: 24px; color: #555">ML</a> <a href="/tags/SQL/" style="font-size: 16.5px; color: #888">SQL</a> <a href="/tags/color/" style="font-size: 14px; color: #999">color</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/java/" style="font-size: 19px; color: #777">java</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/" style="font-size: 14px; color: #999">量子计算</a>
     </div>
   </section>
 
