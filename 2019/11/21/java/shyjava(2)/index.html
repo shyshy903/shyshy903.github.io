@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Hello World | Open-Box</title>
+  <title>Java基础（2） | Open-Box</title>
   
   
 
@@ -201,8 +201,8 @@
         
   
     <h1 class="title">
-      <a href="/2020/02/11/hello-world/">
-        Hello World
+      <a href="/2019/11/21/java/shyjava(2)/">
+        Java基础（2）
       </a>
     </h1>
   
@@ -233,7 +233,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-11</p>
+    <p>2019-11-21</p>
   </a>
 </div>
 
@@ -241,6 +241,14 @@
         
           
             
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/java/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>java</p>
+    </a>
+  </div>
+
 
           
         
@@ -283,19 +291,21 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h1 id="Shy-Learnjava（2）基础"><a href="#Shy-Learnjava（2）基础" class="headerlink" title="Shy-Learnjava（2）基础"></a>Shy-Learnjava（2）基础</h1><h2 id="2-选择"><a href="#2-选择" class="headerlink" title="2 选择"></a>2 选择</h2><h3 id="2-1-布尔类型和逻辑运算符"><a href="#2-1-布尔类型和逻辑运算符" class="headerlink" title="2.1 布尔类型和逻辑运算符"></a>2.1 布尔类型和逻辑运算符</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span>类型的值有真(<span class="keyword">true</span>)或假(<span class="keyword">false</span>)。</span><br><span class="line">关系运算符: &lt;, &lt;=, &gt;, &gt;=, ==, !=</span><br><span class="line">关系运算符的计算结果是<span class="keyword">boolean</span>类型</span><br><span class="line"><span class="keyword">boolean</span>类型不能与其它数据类型混合运算</span><br><span class="line">布尔运算符: !, &amp;&amp;, ||, ^, &amp;, | </span><br><span class="line">&amp;&amp; , ||为条件逻辑运算符: (x&gt;<span class="number">0</span>) &amp;&amp; (x&lt;<span class="number">9</span>)</span><br><span class="line">&amp;，|为无条件逻辑运算符，同时也是位操作符</span><br><span class="line">^ 异或</span><br></pre></td></tr></table></figure>
+<div align = center>
+<img src = "https://img.vim-cn.com/80/4f17375d3236c4af37f9a0803b9272b11b99c5.png">
+</div>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h3 id="2-2-if语句"><a href="#2-2-if语句" class="headerlink" title="2.2 if语句"></a>2.2 if语句</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (radius &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">  area = radius * radius * PI;</span><br><span class="line">  System.out.println(<span class="string">"The area for the circle of radius "</span> </span><br><span class="line">    + radius + <span class="string">" is "</span> + area);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (radius &gt;= <span class="number">0</span>) &#123;   </span><br><span class="line">  area = radius * radius * <span class="number">3.14159</span>;</span><br><span class="line">  System.out.println(<span class="string">"The area for the circle of radius "</span> </span><br><span class="line">    + radius + <span class="string">" is "</span> + area);</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">else</span> &#123;  System.out.println(<span class="string">"Negative input"</span>);   &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (score &gt; <span class="number">90.0</span>)</span><br><span class="line">    grade = ‘A’;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (score &gt;= <span class="number">80.0</span>)</span><br><span class="line">    grade = ‘B’;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (scroe &gt;= <span class="number">70.0</span>)</span><br><span class="line">    grade = ‘C’;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (score &gt;= <span class="number">60.0</span>)</span><br><span class="line">    grade = ‘D’;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    grade = ‘F’</span><br><span class="line"></span><br><span class="line"><span class="comment">// 高手的if</span></span><br><span class="line"><span class="keyword">if</span> (number % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">    even = <span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    even = <span class="keyword">false</span>;<span class="comment">//新手</span></span><br><span class="line">等价于</span><br><span class="line">even = (number % <span class="number">2</span> == <span class="number">0</span>);<span class="comment">//高手</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (even == <span class="keyword">true</span>)</span><br><span class="line">    System.out.println(“It is even.”);</span><br><span class="line">等价于</span><br><span class="line"><span class="keyword">if</span> (even)</span><br><span class="line">    System.out.println(“It is even.”);</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-条件语句"><a href="#2-3-条件语句" class="headerlink" title="2.3 条件语句"></a>2.3 条件语句</h3><ul>
+<li><p>swith语句</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(expression) &#123;</span><br><span class="line">    <span class="keyword">case</span> value1 : </span><br><span class="line">        statement(s)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> value2 : </span><br><span class="line">        statement(s)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    …</span><br><span class="line">    <span class="keyword">default</span> : </span><br><span class="line">        statement(s)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>条件表达式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">max = (num1 &gt; num2) ? num1 : num2;</span><br></pre></td></tr></table></figure>
+<h3 id="2-4-操作符的优先级和表达式规则"><a href="#2-4-操作符的优先级和表达式规则" class="headerlink" title="2.4 操作符的优先级和表达式规则"></a>2.4 操作符的优先级和表达式规则</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">括号优先级最高，如果括号有嵌套，内部括号优先执行。</span><br><span class="line">如果没有括号，则根据操作符的优先级和结合规则确定执行顺序。</span><br><span class="line">如果相邻的操作符有相同的优先级，则根据结合规则确定执行顺序。</span><br><span class="line">除赋值运算符之外的二元运算符都是左结合的。</span><br><span class="line">赋值运算符和?:运算符是右结合的。</span><br><span class="line">例如：</span><br><span class="line">a+b-c+d  等价于 ((a+b)-c)+d</span><br><span class="line">a=b+=c=<span class="number">5</span> 等价于 a=(b+=(c=<span class="number">5</span>))</span><br><span class="line"></span><br><span class="line">操作符的优先级和结合规则只规定了操作符的执行顺序。操作数从左至右进行运算。</span><br><span class="line">二元操作符左边的操作数比右边的操作数优先运算。例如：</span><br><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> x = a + (++a);</span><br><span class="line">x的结果为<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> x = (++a) + a;</span><br><span class="line">x的结果为<span class="number">2</span></span><br></pre></td></tr></table></figure></li>
+<li>表达式规则<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">规则</span><br><span class="line">可能的情况下，从左向右计算所有子表达式</span><br><span class="line">根据运算符的优先级进行运算</span><br><span class="line">优先级相同的运算符，根据结合方向进行运算</span><br><span class="line"><span class="number">3</span> + <span class="number">4</span> * <span class="number">4</span> &gt; <span class="number">5</span> * (<span class="number">4</span> + <span class="number">3</span>) - <span class="number">1</span> 的执行顺序为：</span><br><span class="line"> <span class="number">3</span> + <span class="number">4</span> * <span class="number">4</span> &gt; <span class="number">5</span> * (<span class="number">4</span> + <span class="number">3</span>) - <span class="number">1</span> </span><br><span class="line"> <span class="number">3</span> + <span class="number">4</span> * <span class="number">4</span> &gt; <span class="number">5</span> * <span class="number">7</span> – <span class="number">1</span></span><br><span class="line"> <span class="number">3</span> + <span class="number">16</span> &gt; <span class="number">5</span> * <span class="number">7</span> – <span class="number">1</span></span><br><span class="line"> <span class="number">3</span> + <span class="number">16</span> &gt; <span class="number">35</span> – <span class="number">1</span></span><br><span class="line"> <span class="number">19</span> &gt; <span class="number">35</span> – <span class="number">1</span></span><br><span class="line"> <span class="number">19</span> &gt; <span class="number">34</span></span><br><span class="line"> <span class="keyword">false</span></span><br></pre></td></tr></table></figure></li>
+</ul>
 
       </div>
       
@@ -308,10 +318,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-11T15:40:07+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-21T00:00:00+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Feb 11, 2020</p>
+    <p>updated at Nov 21, 2019</p>
   </a>
 </div>
 
@@ -319,6 +329,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/java/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>java</p></a></div>
+
 
         
       
@@ -330,7 +343,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://shyshy903.github.io/2020/02/11/hello-world/&title=Hello World | Open-Box&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://shyshy903.github.io/2019/11/21/java/shyjava(2)/&title=Java基础（2） | Open-Box&summary="
           
           >
           
@@ -342,7 +355,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://shyshy903.github.io/2020/02/11/hello-world/&title=Hello World | Open-Box&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://shyshy903.github.io/2019/11/21/java/shyjava(2)/&title=Java基础（2） | Open-Box&summary="
           
           >
           
@@ -354,7 +367,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://shyshy903.github.io/2020/02/11/hello-world/&title=Hello World | Open-Box&summary="
+          href="http://service.weibo.com/share/share.php?url=https://shyshy903.github.io/2019/11/21/java/shyjava(2)/&title=Java基础（2） | Open-Box&summary="
           
           >
           
@@ -382,16 +395,16 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
                           <h4>
-                              <a href="/2020/02/11/SQL/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" rel="prev" title="MySQL的安装与配置">
+                              <a href="/2019/11/22/java/shyjava(3)/" rel="prev" title="Java基础（3）">
                                 
-                                    MySQL的安装与配置
+                                    Java基础（3）
                                 
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/SQL/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> SQL</a>
+                                  <a class="tag" href="/tags/java/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> java</a>
                               </h6>
                           
                       </span>
@@ -402,16 +415,16 @@
                       <span class="art-item-right" aria-hidden="true">
                           <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/2019/11/30/Machine_Learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%888-K%E5%9D%87%E5%80%BC%E8%81%9A%E7%B1%BB%EF%BC%89/" rel="prev" title="《机器学习实战》《西瓜书》笔记（八）- K均值聚类">
+                              <a href="/2019/11/20/java/shyjava(1)/" rel="prev" title="Java基础（1）">
                                   
-                                      《机器学习实战》《西瓜书》笔记（八）- K均值聚类
+                                      Java基础（1）
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/ML/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> ML</a>
+                                  <a class="tag" href="/tags/java/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> java</a>
                               </h6>
                           
                       </span>
@@ -441,7 +454,7 @@
 
   <script>
     window.subData = {
-      title: 'Hello World',
+      title: 'Java基础（2）',
       tools: true
     }
   </script>
@@ -594,13 +607,13 @@
         
           <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86%E4%B8%8E%E5%8C%96%E5%AD%A6/" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86%E4%B8%8E%E5%8C%96%E5%AD%A6/"><div class='name'>计算物理与化学</div><div class='badge'>(1)</div></a></li>
-        
           <li><a class="flat-box" title="/categories/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/" href="/categories/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/"><div class='name'>论文写作</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/%E8%AE%BE%E8%AE%A1/" href="/categories/%E8%AE%BE%E8%AE%A1/"><div class='name'>设计</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"><div class='name'>软件安装与配置</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/" href="/categories/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/"><div class='name'>量子计算</div><div class='badge'>(1)</div></a></li>
         
       </ul>
     </div>
@@ -645,7 +658,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/tags/DL/" style="font-size: 19px; color: #777">DL</a> <a href="/tags/ML/" style="font-size: 24px; color: #555">ML</a> <a href="/tags/SQL/" style="font-size: 16.5px; color: #888">SQL</a> <a href="/tags/color/" style="font-size: 14px; color: #999">color</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/java/" style="font-size: 21.5px; color: #666">java</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86%E4%B8%8E%E5%8C%96%E5%AD%A6/" style="font-size: 14px; color: #999">计算物理与化学</a>
+      <a href="/tags/DL/" style="font-size: 19px; color: #777">DL</a> <a href="/tags/ML/" style="font-size: 24px; color: #555">ML</a> <a href="/tags/SQL/" style="font-size: 16.5px; color: #888">SQL</a> <a href="/tags/color/" style="font-size: 14px; color: #999">color</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/java/" style="font-size: 21.5px; color: #666">java</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/" style="font-size: 14px; color: #999">量子计算</a>
     </div>
   </section>
 

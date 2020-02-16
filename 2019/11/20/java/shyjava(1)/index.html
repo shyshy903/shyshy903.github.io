@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Java学习笔记（一） | Open-Box</title>
+  <title>Java基础（1） | Open-Box</title>
   
   
 
@@ -201,8 +201,8 @@
         
   
     <h1 class="title">
-      <a href="/2020/02/11/java/shyjava(1)/">
-        Java学习笔记（一）
+      <a href="/2019/11/20/java/shyjava(1)/">
+        Java基础（1）
       </a>
     </h1>
   
@@ -233,7 +233,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-11</p>
+    <p>2019-11-20</p>
   </a>
 </div>
 
@@ -307,16 +307,12 @@
 </li>
 </ul>
 <h2 id="1-基本程序设计"><a href="#1-基本程序设计" class="headerlink" title="1 基本程序设计"></a>1 基本程序设计</h2><ul>
-<li><p>编写一个程序</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ComputeArea</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">double</span> raidus;</span><br><span class="line">        <span class="keyword">double</span> area;</span><br><span class="line">        area = radius * raidus * <span class="number">3.14</span></span><br><span class="line">        System.out.println(<span class="string">"The area of the circle of raius"</span> + radius + <span class="string">"is"</span> + area);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>编写一个程序<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ComputeArea</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">double</span> raidus;</span><br><span class="line">        <span class="keyword">double</span> area;</span><br><span class="line">        area = radius * raidus * <span class="number">3.14</span></span><br><span class="line">        System.out.println(<span class="string">"The area of the circle of raius"</span> + radius + <span class="string">"is"</span> + area);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="1-1-标准输入与输出"><a href="#1-1-标准输入与输出" class="headerlink" title="1.1 标准输入与输出"></a>1.1 标准输入与输出</h3></li>
-<li><p>标准输入</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out <span class="comment">//标准输出流类OutputStrem的对象</span></span><br><span class="line">System.in <span class="comment">//标准输入流类InputStrem的对象</span></span><br></pre></td></tr></table></figure></li>
-<li><p>Scanner类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner</span><br><span class="line">Scanner input = <span class="keyword">new</span> Scanner(System.in)</span><br><span class="line"><span class="keyword">double</span> d = input.nextDouble();</span><br><span class="line"><span class="comment">// 方法有</span></span><br><span class="line">nextByte()</span><br><span class="line">nextShort()</span><br><span class="line">nextInt()</span><br><span class="line">nextLong()</span><br><span class="line">nextFloat()</span><br><span class="line">nextDouble()</span><br><span class="line">next()  <span class="comment">// 读入一个字符串</span></span><br></pre></td></tr></table></figure>
+<li>标准输入<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out <span class="comment">//标准输出流类OutputStrem的对象</span></span><br><span class="line">System.in <span class="comment">//标准输入流类InputStrem的对象</span></span><br></pre></td></tr></table></figure></li>
+<li>Scanner类<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner</span><br><span class="line">Scanner input = <span class="keyword">new</span> Scanner(System.in)</span><br><span class="line"><span class="keyword">double</span> d = input.nextDouble();</span><br><span class="line"><span class="comment">// 方法有</span></span><br><span class="line">nextByte()</span><br><span class="line">nextShort()</span><br><span class="line">nextInt()</span><br><span class="line">nextLong()</span><br><span class="line">nextFloat()</span><br><span class="line">nextDouble()</span><br><span class="line">next()  <span class="comment">// 读入一个字符串</span></span><br></pre></td></tr></table></figure>
 <h3 id="1-2-标识符、常量与变量"><a href="#1-2-标识符、常量与变量" class="headerlink" title="1.2 标识符、常量与变量"></a>1.2 标识符、常量与变量</h3></li>
-<li><p>标识符命名规则</p>
-<ul>
+<li>标识符命名规则<ul>
 <li>标识符是由字母、数字、下划线(_)、美元符号($)组成的字符序列。</li>
 <li>标识符必须以字母、下划线(_)、美元符号($)开头。不能以数字开头。标识符不能是保留字。</li>
 <li>标识符不能为true、false或null等事实上的保留字（参见英文维基网）</li>
@@ -324,10 +320,8 @@
 <li>例如：$2, area, radius, showMessageDialog是合法的标识符；2A, d+4是非法的标识符</li>
 </ul>
 </li>
-<li><p>java保留字</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span>	       <span class="keyword">default</span> 		<span class="keyword">if</span>	        	<span class="keyword">package</span>	       	<span class="keyword">this</span>   </span><br><span class="line"><span class="keyword">assert</span>       	        <span class="keyword">do</span>              goto            	<span class="keyword">private</span>         	<span class="keyword">throw</span>   </span><br><span class="line"><span class="keyword">boolean</span>	        	<span class="keyword">double</span>          implements	<span class="keyword">protected</span> 	<span class="keyword">throws</span>        </span><br><span class="line"><span class="function"><span class="keyword">break</span> 	        	<span class="keyword">else</span>	        <span class="keyword">import</span>	        	<span class="keyword">public</span>	        	<span class="title">transient</span><span class="params">(非序列化)</span></span></span><br><span class="line"><span class="function"><span class="keyword">byte</span>	        	<span class="keyword">enum</span>		<span class="keyword">instanceof</span>	return        	<span class="keyword">true</span></span></span><br><span class="line"><span class="function"><span class="keyword">case</span>	        	extends		<span class="keyword">int</span>	        	<span class="keyword">short</span>	        	<span class="keyword">try</span></span></span><br><span class="line"><span class="function"><span class="keyword">catch</span>	        	<span class="keyword">false</span>	        interface       	<span class="keyword">static</span>	        	<span class="keyword">void</span></span></span><br><span class="line"><span class="function"><span class="keyword">char</span>	        	<span class="keyword">final</span>           <span class="keyword">long</span>            	<span class="title">strictfp</span><span class="params">(严格浮点)</span>   	<span class="keyword">volatile</span>          </span></span><br><span class="line"><span class="function">class                 	<span class="keyword">finally</span>		<span class="title">native</span><span class="params">(本地方法)</span>     	<span class="keyword">super</span>	        	<span class="keyword">while</span></span></span><br><span class="line"><span class="function"><span class="keyword">const</span>	        	<span class="keyword">float</span>	        new     		<span class="keyword">switch</span>	        </span></span><br><span class="line"><span class="function"><span class="keyword">continue</span>	        	<span class="keyword">for</span>                     	<span class="keyword">null</span> 	        	<span class="keyword">synchronized</span></span></span><br></pre></td></tr></table></figure></li>
-<li><p>java常量</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> datatype CONSTANT_NAME = value;</span><br><span class="line"><span class="comment">//注意常量的声明和初始化必须同时完成</span></span><br><span class="line"><span class="keyword">final</span> <span class="keyword">double</span> PI = <span class="number">3.14159</span>;</span><br><span class="line"><span class="comment">// 避免重复输入</span></span><br><span class="line"><span class="comment">// 便于程序修改</span></span><br><span class="line"><span class="comment">// 便于程序阅读</span></span><br></pre></td></tr></table></figure>
+<li>java保留字<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span>	       <span class="keyword">default</span> 		<span class="keyword">if</span>	        	<span class="keyword">package</span>	       	<span class="keyword">this</span>   </span><br><span class="line"><span class="keyword">assert</span>       	        <span class="keyword">do</span>              goto            	<span class="keyword">private</span>         	<span class="keyword">throw</span>   </span><br><span class="line"><span class="keyword">boolean</span>	        	<span class="keyword">double</span>          implements	<span class="keyword">protected</span> 	<span class="keyword">throws</span>        </span><br><span class="line"><span class="function"><span class="keyword">break</span> 	        	<span class="keyword">else</span>	        <span class="keyword">import</span>	        	<span class="keyword">public</span>	        	<span class="title">transient</span><span class="params">(非序列化)</span></span></span><br><span class="line"><span class="function"><span class="keyword">byte</span>	        	<span class="keyword">enum</span>		<span class="keyword">instanceof</span>	return        	<span class="keyword">true</span></span></span><br><span class="line"><span class="function"><span class="keyword">case</span>	        	extends		<span class="keyword">int</span>	        	<span class="keyword">short</span>	        	<span class="keyword">try</span></span></span><br><span class="line"><span class="function"><span class="keyword">catch</span>	        	<span class="keyword">false</span>	        interface       	<span class="keyword">static</span>	        	<span class="keyword">void</span></span></span><br><span class="line"><span class="function"><span class="keyword">char</span>	        	<span class="keyword">final</span>           <span class="keyword">long</span>            	<span class="title">strictfp</span><span class="params">(严格浮点)</span>   	<span class="keyword">volatile</span>          </span></span><br><span class="line"><span class="function">class                 	<span class="keyword">finally</span>		<span class="title">native</span><span class="params">(本地方法)</span>     	<span class="keyword">super</span>	        	<span class="keyword">while</span></span></span><br><span class="line"><span class="function"><span class="keyword">const</span>	        	<span class="keyword">float</span>	        new     		<span class="keyword">switch</span>	        </span></span><br><span class="line"><span class="function"><span class="keyword">continue</span>	        	<span class="keyword">for</span>                     	<span class="keyword">null</span> 	        	<span class="keyword">synchronized</span></span></span><br></pre></td></tr></table></figure></li>
+<li>java常量<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> datatype CONSTANT_NAME = value;</span><br><span class="line"><span class="comment">//注意常量的声明和初始化必须同时完成</span></span><br><span class="line"><span class="keyword">final</span> <span class="keyword">double</span> PI = <span class="number">3.14159</span>;</span><br><span class="line"><span class="comment">// 避免重复输入</span></span><br><span class="line"><span class="comment">// 便于程序修改</span></span><br><span class="line"><span class="comment">// 便于程序阅读</span></span><br></pre></td></tr></table></figure>
 <h3 id="1-3-赋值语句与基本表达式"><a href="#1-3-赋值语句与基本表达式" class="headerlink" title="1.3 赋值语句与基本表达式"></a>1.3 赋值语句与基本表达式</h3></li>
 <li><p>赋值语句</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 赋值语句右读</span></span><br><span class="line">i = j = k = <span class="number">1</span>;</span><br><span class="line"><span class="comment">//不要认为i, j, k的值不变，volatile类型的变量值可变</span></span><br><span class="line">k = <span class="number">1</span>;</span><br><span class="line">j = k;  </span><br><span class="line">i = j;</span><br><span class="line"></span><br><span class="line"><span class="comment">//语法</span></span><br><span class="line">datatype variable = expression;</span><br><span class="line"><span class="comment">//例如：</span></span><br><span class="line"><span class="keyword">int</span> x = <span class="number">1</span>;   <span class="comment">//某些变量在申明时必须同时初始化：final int m=0;</span></span><br><span class="line"><span class="keyword">int</span> x = <span class="number">1</span>, y = <span class="number">2</span>;</span><br><span class="line"><span class="comment">//局部变量在使用前必须赋值。</span></span><br><span class="line"><span class="keyword">int</span> x, y;     <span class="comment">//若是成员变量，x, y有默认值=0</span></span><br><span class="line">y = x + <span class="number">1</span>; <span class="comment">//局部变量无默认值则错error</span></span><br></pre></td></tr></table></figure>
@@ -356,10 +350,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-11T16:48:55+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-20T00:00:00+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Feb 11, 2020</p>
+    <p>updated at Nov 20, 2019</p>
   </a>
 </div>
 
@@ -381,7 +375,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://shyshy903.github.io/2020/02/11/java/shyjava(1)/&title=Java学习笔记（一） | Open-Box&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://shyshy903.github.io/2019/11/20/java/shyjava(1)/&title=Java基础（1） | Open-Box&summary="
           
           >
           
@@ -393,7 +387,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://shyshy903.github.io/2020/02/11/java/shyjava(1)/&title=Java学习笔记（一） | Open-Box&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://shyshy903.github.io/2019/11/20/java/shyjava(1)/&title=Java基础（1） | Open-Box&summary="
           
           >
           
@@ -405,7 +399,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://shyshy903.github.io/2020/02/11/java/shyjava(1)/&title=Java学习笔记（一） | Open-Box&summary="
+          href="http://service.weibo.com/share/share.php?url=https://shyshy903.github.io/2019/11/20/java/shyjava(1)/&title=Java基础（1） | Open-Box&summary="
           
           >
           
@@ -433,9 +427,9 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
                           <h4>
-                              <a href="/2020/02/11/java/shyjava(3)/" rel="prev" title="Java学习笔记（三）">
+                              <a href="/2019/11/21/java/shyjava(2)/" rel="prev" title="Java基础（2）">
                                 
-                                    Java学习笔记（三）
+                                    Java基础（2）
                                 
                               </a>
                           </h4>
@@ -453,16 +447,16 @@
                       <span class="art-item-right" aria-hidden="true">
                           <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/2020/02/11/SQL/SQL%E8%AF%AD%E8%A8%80%EF%BC%88%E4%B8%80%EF%BC%89/" rel="prev" title="SQL语言进阶（一）">
+                              <a href="/2019/11/01/Linux/linux/" rel="prev" title="Linux">
                                   
-                                      SQL语言进阶（一）
+                                      Linux
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/SQL/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> SQL</a>
+                                  <a class="tag" href="/tags/linux/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> linux</a>
                               </h6>
                           
                       </span>
@@ -492,7 +486,7 @@
 
   <script>
     window.subData = {
-      title: 'Java学习笔记（一）',
+      title: 'Java基础（1）',
       tools: true
     }
   </script>
@@ -645,13 +639,13 @@
         
           <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86%E4%B8%8E%E5%8C%96%E5%AD%A6/" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86%E4%B8%8E%E5%8C%96%E5%AD%A6/"><div class='name'>计算物理与化学</div><div class='badge'>(1)</div></a></li>
-        
           <li><a class="flat-box" title="/categories/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/" href="/categories/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/"><div class='name'>论文写作</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/%E8%AE%BE%E8%AE%A1/" href="/categories/%E8%AE%BE%E8%AE%A1/"><div class='name'>设计</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"><div class='name'>软件安装与配置</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/" href="/categories/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/"><div class='name'>量子计算</div><div class='badge'>(1)</div></a></li>
         
       </ul>
     </div>
@@ -696,7 +690,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/tags/DL/" style="font-size: 19px; color: #777">DL</a> <a href="/tags/ML/" style="font-size: 24px; color: #555">ML</a> <a href="/tags/SQL/" style="font-size: 16.5px; color: #888">SQL</a> <a href="/tags/color/" style="font-size: 14px; color: #999">color</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/java/" style="font-size: 21.5px; color: #666">java</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86%E4%B8%8E%E5%8C%96%E5%AD%A6/" style="font-size: 14px; color: #999">计算物理与化学</a>
+      <a href="/tags/DL/" style="font-size: 19px; color: #777">DL</a> <a href="/tags/ML/" style="font-size: 24px; color: #555">ML</a> <a href="/tags/SQL/" style="font-size: 16.5px; color: #888">SQL</a> <a href="/tags/color/" style="font-size: 14px; color: #999">color</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/java/" style="font-size: 21.5px; color: #666">java</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/" style="font-size: 14px; color: #999">量子计算</a>
     </div>
   </section>
 
