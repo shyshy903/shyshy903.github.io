@@ -116,34 +116,34 @@
 							</li>
       			
   						<li>
-								<a class="nav flat-box" href="/blog/categories/"
+								<a class="nav flat-box" href="/public/categories/"
                   
                     rel="nofollow"
                   
                   
-                  id="blogcategories">
+                  id="publiccategories">
 									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
 								</a>
 							</li>
       			
   						<li>
-								<a class="nav flat-box" href="/blog/tags/"
+								<a class="nav flat-box" href="/public/tags/"
                   
                     rel="nofollow"
                   
                   
-                  id="blogtags">
+                  id="publictags">
 									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
 								</a>
 							</li>
       			
   						<li>
-								<a class="nav flat-box" href="/blog/archives/"
+								<a class="nav flat-box" href="/public/archives/"
                   
                     rel="nofollow"
                   
                   
-                  id="blogarchives">
+                  id="publicarchives">
 									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
 								</a>
 							</li>
@@ -184,28 +184,6 @@
 		<nav class="menu navgation">
       <ul>
         
-          
-            <li>
-							<a class="nav flat-box" href="/"
-                
-                
-                id="home">
-								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/archives/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogarchives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-       
       </ul>
 		</nav>
     </header>
@@ -359,9 +337,6 @@
 <h2 id="测试算法与分类器"><a href="#测试算法与分类器" class="headerlink" title="测试算法与分类器"></a>测试算法与分类器</h2><h3 id="测试算法构造分类器"><a href="#测试算法构造分类器" class="headerlink" title="测试算法构造分类器"></a>测试算法构造分类器</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数：使用决策树的分类函数</span></span><br><span class="line"><span class="string">para:</span></span><br><span class="line"><span class="string">    inputree,</span></span><br><span class="line"><span class="string">    featLabels,</span></span><br><span class="line"><span class="string">    testVec</span></span><br><span class="line"><span class="string">return:</span></span><br><span class="line"><span class="string">    classlabel,分类器</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classify</span><span class="params">(inputTree, featLabels, testVec)</span>:</span></span><br><span class="line">    <span class="comment"># 获取决策树结点</span></span><br><span class="line">    firstStr = next(iter(inputTree))</span><br><span class="line">    <span class="comment"># 下一个字典</span></span><br><span class="line">    secondDict = inputTree[firstStr]</span><br><span class="line">    featIndex = featLabels.index(firstStr)</span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> secondDict.keys():</span><br><span class="line">        <span class="keyword">if</span> testVec[featIndex] == key:</span><br><span class="line">            <span class="keyword">if</span> type(secondDict[key]).__name__ == <span class="string">'dict'</span>:</span><br><span class="line">                classLabel = classify(secondDict[key], featLabels, testVec)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                classLabel = secondDict[key]</span><br><span class="line">    <span class="keyword">return</span> classLabel</span><br></pre></td></tr></table></figure>
 <h3 id="使用算法"><a href="#使用算法" class="headerlink" title="使用算法"></a>使用算法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数说明：存储决策树</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Parameters:</span></span><br><span class="line"><span class="string">    inputTree - 已经生成的决策树</span></span><br><span class="line"><span class="string">    filename - 决策树的存储文件名</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">Returns:</span></span><br><span class="line"><span class="string">    None</span></span><br><span class="line"><span class="string">"""</span>   </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">storeTree</span><span class="params">(inputTree, filename)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(filename, <span class="string">'wb'</span>) <span class="keyword">as</span> fw:</span><br><span class="line">        pickle.dump(inputTree, fw)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数说明：读取决策树</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Parameters:</span></span><br><span class="line"><span class="string">    filename - 决策树的存储文件名</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">Returns:</span></span><br><span class="line"><span class="string">    pickle.load(fr) - 决策树字典</span></span><br><span class="line"><span class="string">"""</span> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">grabTree</span><span class="params">(filename)</span>:</span></span><br><span class="line">    fr = open(filename, <span class="string">'rb'</span>)</span><br><span class="line">    <span class="keyword">return</span> pickle.load(fr)</span><br></pre></td></tr></table></figure>
       </div>
-      
-        <br>
-        <center>这是文章页脚，可以设置打赏图片：<br><fancybox>![](https://img.vim-cn.com/4a/5f8244a7c6e1e069a781b84ed11008e7955e16.png)</fancybox></center>
       
       
         <br>
@@ -577,58 +552,7 @@
           
           
         
-          
-          
-        
-          
-          
-        
       
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
-  
-    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
-  
-</header>
-
-    <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#决策树"><span class="toc-text">决策树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#信息论划分数据集"><span class="toc-text">信息论划分数据集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#决策树的流程"><span class="toc-text">决策树的流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#信息增益与信息熵"><span class="toc-text">信息增益与信息熵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算信息熵的源代码"><span class="toc-text">计算信息熵的源代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#划分数据集的算法与代码"><span class="toc-text">划分数据集的算法与代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归构建决策树"><span class="toc-text">递归构建决策树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试算法与分类器"><span class="toc-text">测试算法与分类器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#测试算法构造分类器"><span class="toc-text">测试算法构造分类器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用算法"><span class="toc-text">使用算法</span></a></li></ol></li></ol></li></ol>
-    </div>
-  </section>
-
-
-            
-          
         
           
           
@@ -652,44 +576,13 @@
         
           
           
-            
-              <section class='widget grid'>
-  
-<header class='pure'>
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="grid navgation">
+        
+          
+          
+        
       
-        <li><a class="flat-box" title="/" href="/"
+        
           
-          
-          id="home">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/archives/" href="/blog/archives/"
-          
-            rel="nofollow"
-          
-          
-          id="blogarchives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-            
           
         
           
@@ -702,12 +595,6 @@
           
         
       
-        
-          
-          
-        
-          
-          
         
           
           
@@ -726,8 +613,8 @@
       rel="nofollow"
     
     
-    href="/blog/categories/"
-    title="blog/categories/">
+    href="/categories/"
+    title="categories/">
     <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
   
 </header>
@@ -781,12 +668,6 @@
         
           
           
-        
-          
-          
-        
-          
-          
             
               
   <section class='widget tagcloud'>
@@ -799,8 +680,8 @@
       rel="nofollow"
     
     
-    href="/blog/tags/"
-    title="blog/tags/">
+    href="/tags/"
+    title="tags/">
     <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
   
 </header>
@@ -818,12 +699,6 @@
           
         
       
-        
-          
-          
-        
-          
-          
         
           
           
@@ -920,12 +795,6 @@
           
         
       
-        
-          
-          
-        
-          
-          
         
           
           
@@ -1049,14 +918,14 @@
       $(function(){
         if ('') {
           $('').backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg"],
           {
             duration: "6000",
             fade: "2500"
           });
         } else {
           $.backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg"],
           {
             duration: "6000",
             fade: "2500"
@@ -1200,5 +1069,20 @@
 
 
   <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

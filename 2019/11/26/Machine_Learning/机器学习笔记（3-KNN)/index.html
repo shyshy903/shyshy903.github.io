@@ -116,34 +116,34 @@
 							</li>
       			
   						<li>
-								<a class="nav flat-box" href="/blog/categories/"
+								<a class="nav flat-box" href="/public/categories/"
                   
                     rel="nofollow"
                   
                   
-                  id="blogcategories">
+                  id="publiccategories">
 									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
 								</a>
 							</li>
       			
   						<li>
-								<a class="nav flat-box" href="/blog/tags/"
+								<a class="nav flat-box" href="/public/tags/"
                   
                     rel="nofollow"
                   
                   
-                  id="blogtags">
+                  id="publictags">
 									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
 								</a>
 							</li>
       			
   						<li>
-								<a class="nav flat-box" href="/blog/archives/"
+								<a class="nav flat-box" href="/public/archives/"
                   
                     rel="nofollow"
                   
                   
-                  id="blogarchives">
+                  id="publicarchives">
 									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
 								</a>
 							</li>
@@ -184,28 +184,6 @@
 		<nav class="menu navgation">
       <ul>
         
-          
-            <li>
-							<a class="nav flat-box" href="/"
-                
-                
-                id="home">
-								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/archives/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogarchives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-       
       </ul>
 		</nav>
     </header>
@@ -362,9 +340,6 @@
 <h3 id="测试算法，作为完整程序验证分类器"><a href="#测试算法，作为完整程序验证分类器" class="headerlink" title="测试算法，作为完整程序验证分类器"></a>测试算法，作为完整程序验证分类器</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数说明：分类器测试函数</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Parameters:</span></span><br><span class="line"><span class="string">    None</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">Returns:</span></span><br><span class="line"><span class="string">    normDataSet - 归一化后的特征矩阵</span></span><br><span class="line"><span class="string">    ranges - 数据范围</span></span><br><span class="line"><span class="string">    minVals - 数据最小值</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">Modify:</span></span><br><span class="line"><span class="string">    2018-07-13</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">datingClassTest</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 打开文件名</span></span><br><span class="line">    filename = <span class="string">"datingTestSet.txt"</span></span><br><span class="line">    <span class="comment"># 将返回的特征矩阵和分类向量分别存储到datingDataMat和datingLabels中</span></span><br><span class="line">    datingDataMat, datingLabels = file2matrix(filename)</span><br><span class="line">    <span class="comment"># 取所有数据的10% hoRatio越小，错误率越低</span></span><br><span class="line">    hoRatio = <span class="number">0.10</span></span><br><span class="line">    <span class="comment"># 数据归一化，返回归一化数据结果，数据范围，最小值</span></span><br><span class="line">    normMat, ranges, minVals = autoNorm(datingDataMat)</span><br><span class="line">    <span class="comment"># 获取normMat的行数</span></span><br><span class="line">    m = normMat.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="comment"># 10%的测试数据的个数</span></span><br><span class="line">    numTestVecs = int(m * hoRatio)</span><br><span class="line">    <span class="comment"># 分类错误计数</span></span><br><span class="line">    errorCount = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(numTestVecs):</span><br><span class="line">        <span class="comment"># 前numTestVecs个数据作为测试集，后m-numTestVecs个数据作为训练集</span></span><br><span class="line">        <span class="comment"># k选择label数+1（结果比较好）</span></span><br><span class="line">        classifierResult = classify0(normMat[i,:], normMat[numTestVecs:m,:],\</span><br><span class="line">                                     datingLabels[numTestVecs:m], <span class="number">4</span>)</span><br><span class="line">        print(<span class="string">"分类结果:%d\t真实类别:%d"</span> % (classifierResult, datingLabels[i]))</span><br><span class="line">        <span class="keyword">if</span> classifierResult != datingLabels[i]:</span><br><span class="line">            errorCount += <span class="number">1.0</span></span><br><span class="line">    print(<span class="string">"错误率:%f%%"</span> % (errorCount/float(numTestVecs)*<span class="number">100</span>))</span><br></pre></td></tr></table></figure>
 <h3 id="使用算法"><a href="#使用算法" class="headerlink" title="使用算法"></a>使用算法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">函数说明：通过输入一个人的三围特征，进行分类输出</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Parameters:</span></span><br><span class="line"><span class="string">    None</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">Returns:</span></span><br><span class="line"><span class="string">    None</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">Modify:</span></span><br><span class="line"><span class="string">    2018-07-14</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classifyPerson</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 输出结果</span></span><br><span class="line">    resultList = [<span class="string">'讨厌'</span>, <span class="string">'有些喜欢'</span>, <span class="string">'非常喜欢'</span>]</span><br><span class="line">    <span class="comment"># 三维特征用户输入</span></span><br><span class="line">    percentTats = float(input(<span class="string">"玩视频游戏所消耗时间百分比："</span>))</span><br><span class="line">    ffMiles = float(input(<span class="string">"每年获得的飞行常客里程数："</span>))</span><br><span class="line">    iceCream = float(input(<span class="string">"每周消费的冰淇淋公升数："</span>))</span><br><span class="line">    <span class="comment"># 打开的文件名</span></span><br><span class="line">    filename = <span class="string">"datingTestSet.txt"</span></span><br><span class="line">    <span class="comment"># 打开并处理数据</span></span><br><span class="line">    datingDataMat, datingLabels = file2matrix(filename)</span><br><span class="line">    <span class="comment"># 训练集归一化</span></span><br><span class="line">    normMat, ranges, minVals = autoNorm(datingDataMat)</span><br><span class="line">    <span class="comment"># 生成NumPy数组，测试集</span></span><br><span class="line">    inArr = np.array([percentTats, ffMiles, iceCream])</span><br><span class="line">    <span class="comment"># 测试集归一化</span></span><br><span class="line">    norminArr = (inArr - minVals) / ranges</span><br><span class="line">    <span class="comment"># 返回分类结果</span></span><br><span class="line">    classifierResult = classify0(norminArr, normMat, datingLabels, <span class="number">4</span>)</span><br><span class="line">    <span class="comment"># 打印结果</span></span><br><span class="line">    print(<span class="string">"你可能%s这个人"</span> % (resultList[classifierResult - <span class="number">1</span>]))</span><br></pre></td></tr></table></figure>
       </div>
-      
-        <br>
-        <center>这是文章页脚，可以设置打赏图片：<br><fancybox>![](https://img.vim-cn.com/4a/5f8244a7c6e1e069a781b84ed11008e7955e16.png)</fancybox></center>
       
       
         <br>
@@ -580,58 +555,7 @@
           
           
         
-          
-          
-        
-          
-          
-        
       
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
-  
-    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
-  
-</header>
-
-    <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#《机器学习实战》《西瓜书》笔记（三）-KNN"><span class="toc-text">《机器学习实战》《西瓜书》笔记（三）- KNN</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#KNN原理"><span class="toc-text">KNN原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#KNN伪代码"><span class="toc-text">KNN伪代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#KNN源代码"><span class="toc-text">KNN源代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简单的一个示例"><span class="toc-text">简单的一个示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据的准备"><span class="toc-text">数据的准备</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何测试分类器"><span class="toc-text">如何测试分类器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例1-KNN进行约会匹配"><span class="toc-text">示例1 KNN进行约会匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#执行流程"><span class="toc-text">执行流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#准备数据"><span class="toc-text">准备数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析数据，使用matplotlib进行画图"><span class="toc-text">分析数据，使用matplotlib进行画图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#准备数据，归一化"><span class="toc-text">准备数据，归一化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试算法，作为完整程序验证分类器"><span class="toc-text">测试算法，作为完整程序验证分类器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用算法"><span class="toc-text">使用算法</span></a></li></ol></li></ol></li></ol>
-    </div>
-  </section>
-
-
-            
-          
         
           
           
@@ -655,44 +579,13 @@
         
           
           
-            
-              <section class='widget grid'>
-  
-<header class='pure'>
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="grid navgation">
+        
+          
+          
+        
       
-        <li><a class="flat-box" title="/" href="/"
+        
           
-          
-          id="home">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/archives/" href="/blog/archives/"
-          
-            rel="nofollow"
-          
-          
-          id="blogarchives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-            
           
         
           
@@ -705,12 +598,6 @@
           
         
       
-        
-          
-          
-        
-          
-          
         
           
           
@@ -729,8 +616,8 @@
       rel="nofollow"
     
     
-    href="/blog/categories/"
-    title="blog/categories/">
+    href="/categories/"
+    title="categories/">
     <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
   
 </header>
@@ -784,12 +671,6 @@
         
           
           
-        
-          
-          
-        
-          
-          
             
               
   <section class='widget tagcloud'>
@@ -802,8 +683,8 @@
       rel="nofollow"
     
     
-    href="/blog/tags/"
-    title="blog/tags/">
+    href="/tags/"
+    title="tags/">
     <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
   
 </header>
@@ -821,12 +702,6 @@
           
         
       
-        
-          
-          
-        
-          
-          
         
           
           
@@ -923,12 +798,6 @@
           
         
       
-        
-          
-          
-        
-          
-          
         
           
           
@@ -1052,14 +921,14 @@
       $(function(){
         if ('') {
           $('').backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg"],
           {
             duration: "6000",
             fade: "2500"
           });
         } else {
           $.backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg"],
           {
             duration: "6000",
             fade: "2500"
@@ -1203,5 +1072,20 @@
 
 
   <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

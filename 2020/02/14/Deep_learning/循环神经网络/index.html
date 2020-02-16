@@ -116,34 +116,34 @@
 							</li>
       			
   						<li>
-								<a class="nav flat-box" href="/blog/categories/"
+								<a class="nav flat-box" href="/public/categories/"
                   
                     rel="nofollow"
                   
                   
-                  id="blogcategories">
+                  id="publiccategories">
 									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
 								</a>
 							</li>
       			
   						<li>
-								<a class="nav flat-box" href="/blog/tags/"
+								<a class="nav flat-box" href="/public/tags/"
                   
                     rel="nofollow"
                   
                   
-                  id="blogtags">
+                  id="publictags">
 									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
 								</a>
 							</li>
       			
   						<li>
-								<a class="nav flat-box" href="/blog/archives/"
+								<a class="nav flat-box" href="/public/archives/"
                   
                     rel="nofollow"
                   
                   
-                  id="blogarchives">
+                  id="publicarchives">
 									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
 								</a>
 							</li>
@@ -184,28 +184,6 @@
 		<nav class="menu navgation">
       <ul>
         
-          
-            <li>
-							<a class="nav flat-box" href="/"
-                
-                
-                id="home">
-								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/archives/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogarchives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-       
       </ul>
 		</nav>
     </header>
@@ -360,9 +338,6 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">num_hiddens=<span class="number">128</span></span><br><span class="line">num_epochs, num_steps, batch_size, lr, clipping_theta = <span class="number">160</span>, <span class="number">35</span>, <span class="number">32</span>, <span class="number">1e-2</span>, <span class="number">1e-2</span></span><br><span class="line">pred_period, pred_len, prefixes = <span class="number">40</span>, <span class="number">50</span>, [<span class="string">'分开'</span>, <span class="string">'不分开'</span>]</span><br><span class="line"></span><br><span class="line">lr = <span class="number">1e-2</span> <span class="comment"># 注意调整学习率</span></span><br><span class="line"></span><br><span class="line">gru_layer = nn.GRU(input_size=vocab_size, hidden_size=num_hiddens,bidirectional=<span class="literal">True</span>)</span><br><span class="line">model = d2l.RNNModel(gru_layer, vocab_size).to(device)</span><br><span class="line">d2l.train_and_predict_rnn_pytorch(model, num_hiddens, vocab_size, device,</span><br><span class="line">                                corpus_indices, idx_to_char, char_to_idx,</span><br><span class="line">                                num_epochs, num_steps, lr, clipping_theta,</span><br><span class="line">                                batch_size, pred_period, pred_len, prefixes)</span><br></pre></td></tr></table></figure>
 
       </div>
-      
-        <br>
-        <center>这是文章页脚，可以设置打赏图片：<br><fancybox>![](https://img.vim-cn.com/4a/5f8244a7c6e1e069a781b84ed11008e7955e16.png)</fancybox></center>
       
       
         <br>
@@ -573,58 +548,7 @@
           
           
         
-          
-          
-        
-          
-          
-        
       
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
-  
-    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
-  
-</header>
-
-    <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#循环神经网络"><span class="toc-text">循环神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#简单循环神经网络的构造"><span class="toc-text">简单循环神经网络的构造</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#裁剪梯度"><span class="toc-text">裁剪梯度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环神经网络的pytorch实现"><span class="toc-text">循环神经网络的pytorch实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GRU"><span class="toc-text">GRU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LSTM"><span class="toc-text">LSTM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#深度循环网络"><span class="toc-text">深度循环网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双向循环网络"><span class="toc-text">双向循环网络</span></a></li></ol></li></ol></li></ol>
-    </div>
-  </section>
-
-
-            
-          
         
           
           
@@ -648,44 +572,13 @@
         
           
           
-            
-              <section class='widget grid'>
-  
-<header class='pure'>
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="grid navgation">
+        
+          
+          
+        
       
-        <li><a class="flat-box" title="/" href="/"
+        
           
-          
-          id="home">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/archives/" href="/blog/archives/"
-          
-            rel="nofollow"
-          
-          
-          id="blogarchives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-            
           
         
           
@@ -698,12 +591,6 @@
           
         
       
-        
-          
-          
-        
-          
-          
         
           
           
@@ -722,8 +609,8 @@
       rel="nofollow"
     
     
-    href="/blog/categories/"
-    title="blog/categories/">
+    href="/categories/"
+    title="categories/">
     <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
   
 </header>
@@ -777,12 +664,6 @@
         
           
           
-        
-          
-          
-        
-          
-          
             
               
   <section class='widget tagcloud'>
@@ -795,8 +676,8 @@
       rel="nofollow"
     
     
-    href="/blog/tags/"
-    title="blog/tags/">
+    href="/tags/"
+    title="tags/">
     <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
   
 </header>
@@ -814,12 +695,6 @@
           
         
       
-        
-          
-          
-        
-          
-          
         
           
           
@@ -916,12 +791,6 @@
           
         
       
-        
-          
-          
-        
-          
-          
         
           
           
@@ -1045,14 +914,14 @@
       $(function(){
         if ('') {
           $('').backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg"],
           {
             duration: "6000",
             fade: "2500"
           });
         } else {
           $.backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg"],
           {
             duration: "6000",
             fade: "2500"
@@ -1196,5 +1065,20 @@
 
 
   <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
