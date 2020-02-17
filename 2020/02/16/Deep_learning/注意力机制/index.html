@@ -338,6 +338,7 @@
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
         <h1 id="注意力机制"><a href="#注意力机制" class="headerlink" title="注意力机制"></a>注意力机制</h1><p>在“编码器—解码器（seq2seq）”⼀节⾥，解码器在各个时间步依赖相同的背景变量（context vector）来获取输⼊序列信息。当编码器为循环神经⽹络时，背景变量来⾃它最终时间步的隐藏状态。将源序列输入信息以循环单位状态编码，然后将其传递给解码器以生成目标序列。然而这种结构存在着问题，尤其是RNN机制实际中存在长程梯度消失的问题，对于较长的句子，我们很难寄希望于将输入的序列转化为定长的向量而保存所有的有效信息，所以随着所需翻译句子的长度的增加，这种结构的效果会显著下降。</p>
+<p><img src="https://i.bmp.ovh/imgs/2020/02/0d5061d054b296a1.png" alt=""></p>
 <p>与此同时，解码的目标词语可能只与原输入的部分词语有关，而并不是与所有的输入有关。例如，当把“Hello world”翻译成“Bonjour le monde”时，“Hello”映射成“Bonjour”，“world”映射成“monde”。在seq2seq模型中，解码器只能隐式地从编码器的最终状态中选择相应的信息。然而，注意力机制可以将这种选择过程显式地建模。<br><img src="https://img-blog.csdnimg.cn/20200216222846156.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDU3ODAzMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h2 id="注意力机制框架"><a href="#注意力机制框架" class="headerlink" title="注意力机制框架"></a>注意力机制框架</h2><p>Attention 是一种通用的带权池化方法，输入由两部分构成：询问（query）和键值对（key-value pairs）。 Query  , attention layer得到输出与value的维度一致 . 对于一个query来说，attention layer 会与每一个key计算注意力分数并进行权重的归一化，输出的向量则是value的加权求和，而每个key计算的权重与value一一对应。</p>
 <p>为了计算输出，我们首先假设有一个函数 用于计算query和key的相似性，然后可以计算所有的 attention scores ${a_1, \ldots, a_n }$by</p>
