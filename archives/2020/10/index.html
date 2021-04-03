@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>计算机网络基础 | what hurts more, the pain of hard work or the pain of regret?</title>
+  <title>Archives: 2020/10 | what hurts more, the pain of hard work or the pain of regret?</title>
   
   
   <meta name="description" content="https://img.vim-cn.com/33/461edfd8f8283ad38990aa7a83131b4494eb2c.jpg">
@@ -51,7 +51,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover post half'>
+    <cover class='cover  half'>
       
         
   <h1 class='title'>shylab</h1>
@@ -233,10 +233,26 @@
   <div class="l_body">
     <div class='body-wrapper'>
       <div class='l_main'>
-  
-
-  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+	
+		
+  <section class="post-list">
     
+      
+        
+          
+        
+          
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
 
 
   <section class='meta'>
@@ -245,13 +261,11 @@
     <div class="meta" id="header-meta">
       
         
-  
-    <h1 class="title">
-      <a href="/2020/02/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-        计算机网络基础
-      </a>
-    </h1>
-  
+  <h2 class="title">
+    <a href="/2020/10/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%89%A9%E7%90%86%E5%B1%82/">
+      物理层
+    </a>
+  </h2>
 
 
       
@@ -279,7 +293,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-01</p>
+    <p>2020-10-21</p>
   </a>
 </div>
 
@@ -294,24 +308,6 @@
       <p>计算机网络</p>
     </a>
   </div>
-
-
-          
-        
-          
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
 
 
           
@@ -335,236 +331,257 @@
   </section>
 
 
-    <section class="article typo">
-      <div class="article-entry" itemprop="articleBody">
-        <h1 id="计算机网络基础"><a href="#计算机网络基础" class="headerlink" title="计算机网络基础"></a>计算机网络基础</h1><div align='center'>
-<img src="https://i.loli.net/2018/10/29/5bd66b001571e.png#shadow"></img>
-</div>
-
-<h2 id="网络层次划分"><a href="#网络层次划分" class="headerlink" title="网络层次划分"></a>网络层次划分</h2><p>为了使不同计算机厂家生产的计算机能相互通信，在更大范围内建立计算机网络，国际标准化组织（ISO）在 1978 年提出了 “开放系统互联参考模型”，即著名的 OSI/RM 模型（Open System Interconnection/Reference Model）。它将计算机网络体系结构的通信协议划分为七层，自下而上依次为：<strong>物理层（Physics Layer）、数据链路层（Data Link Layer）、网络层（Network Layer）、传输层（Transport Layer）、会话层（Session Layer）、表示层（Presentation Layer）、应用层（Application Layer）</strong>。</p>
-<div align='center'>
-<img src="https://i.loli.net/2018/10/01/5bb234b6321ea.jpg#shadow"></img>
-</div>
-
-<h2 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h2><ol>
-<li>网络地址</li>
-</ol>
-<p>IP 地址由网络号（包括子网号）和主机号组成，网络地址的主机号全为 0，网络地址代表着整个网络。</p>
-<ol>
-<li><p>广播地址<br>IP 地址由网络号（包括子网号）和主机号组成，网络地址的主机号全为 0，网络地址代表着整个网络。</p>
-</li>
-<li><p>地址划分</p>
-</li>
-</ol>
-<ul>
-<li>A 类地址以 0 开头，第一个字节作为网络号，地址范围为：0.0.0.0~127.255.255.255</li>
-<li>B 类地址以 10 开头，前两个字节作为网络号，地址范围是：127.0.0.0~191.255.255.255</li>
-<li>C 类地址以 110 开头，前三个字节作为网络号，地址范围是：192.0.0.0~223.255.255.255</li>
-<li>D 类地址以 1110 开头，地址范围是 224.0.0.0~239.255.255.255，D 类地址作为组播地址（一对多的通信）</li>
-<li>E 类地址以 1111 开头，地址范围是 240.0.0.0~255.255.255.255，E 类地址为保留地址，供以后使用</li>
-</ul>
-<p>注：只有 A、B、C 由网络号和主机号之分，D、E 没有划分网络号和主机号</p>
-<h2 id="特殊地址"><a href="#特殊地址" class="headerlink" title="特殊地址"></a>特殊地址</h2><ul>
-<li>255.255.255.255</li>
-</ul>
-<p>该 IP 地址指的是受限的广播地址。受限广播地址与一般广播地址（直接广播地址）的区别在于，首先广播地址只能用于本地网络，路由器不会转发以受限广播地址为目的的地址的分组；一般广播地址既可以在本地广播，也可跨网段广播。例如：主机 192.168.1.1/30 直接广播数据包后，另一个网段 192.168.1.15/30 也能直接收到该数据包；若发送受限广播数据包则不能收到</p>
-<p>注：一般的广播地址（直接广播地址）能够通过某些路由器（当然不是所有的路由器），而受限的广播地址则不能通过路由器</p>
-<ul>
-<li><p>0.0.0.0<br>常用于寻找自己的 IP 地址，例如在 RARP，BOOTP 和 DHCP 协议中，若某个位置 IP 地址的无盘机想要知道自己的 IP 地址，他就以 255.255.255.255 为目的地址，像本地范围（具体而言是被各个路由器屏蔽的范围内）的服务器发送 IP 请求分组</p>
-</li>
-<li><p>回环地址<br>127.0.0.0/8 被用作回环地址，会换地址表示本机的地址，常用于对本机的测试，用得最多的是 127.0.0.1</p>
-</li>
-<li><p>A、B、C 类私有地址<br>私有地址（Private Address）也叫专用地址，他们不会在全球使用，只具有本地意义</p>
-</li>
-</ul>
-<ul>
-<li>A 类私有地址：10.0.0.0/8，范围是：10.0.0.0~10.255.255.255</li>
-<li>B 类私有地址：172.16.0.0/12，范围是：172.16.0.0~172.31.255.255</li>
-<li>C 类私有地址：192.168.0.0/16，范围是：192.168.0.0~192.168.255.255</li>
-</ul>
-<h2 id="子网掩码及网络划分"><a href="#子网掩码及网络划分" class="headerlink" title="子网掩码及网络划分"></a>子网掩码及网络划分</h2><p>子网掩码是标志两个 IP 地址是否属于一个子网的，也是 32 位二进制地址，其每一个 1 代表该位是网络位，0 代表主机位。它和 IP 地址一样也是使用点式十进制来表示的。如果两个 IP 地址在子网掩码的按位与计算所得结果相同，即表明它们共属于同一个子网中。</p>
-<p>注：在计算子网掩码时，要注意 IP 地址中的保留地址，即 “0” 地址和广播地址，他们是指主机地址或网络全为 “0” 或 “1” 时的 IP 地址，他们代表着本网络地址和广播地址，一般是不能被计算在内的。</p>
-<ul>
-<li>求子网掩码前必须先搞清楚要划分的子网数目，以及每个子网内的所需主机数</li>
-</ul>
-<p>（1）将子网数转化为二进制表示：如欲将 B 类 IP 地址 168.195.0.0 划分成 27 个子网：27=11011;</p>
-<p>（2）取得该二进制的位数，为 N：该二进制为 5 位数，N=5</p>
-<p>（3）取得该 IP 地址的类子网掩码，将其主机地址部分的前 N 位置 1 即得出该 IP 地址划分子网的子网掩码</p>
-<p>该 B 类地址的子网掩码 255.255.0.0 的主机地址前 5 位置 1，得到 255.255.248.0.</p>
-<ul>
-<li>利用主机数来计算<br>如欲将 B 类 IP 地址 168.195.0.0 划分成若干子网，每个子网内由主机 700 台：</li>
-</ul>
-<p>（1）将主机数转化为二进制表示：700=1010111100;</p>
-<p>（2）如果主机数小于或等于 254，则取得该主机的二进制位数，为 N。如果大于 254，也就是说主机地址将占据不止 8 位，该二进制为十位数，N=10</p>
-<p>（3）使用 255.255.255.255 来将该类 IP 地址的主机地址位数全部置 1，然后从后向前将 N 位全部置 0，即为子网掩码值。将该 B 类地址的子网掩码 255.255.0.0 的主机地址全部置 1，得到 255.255.255.255，然后再从后向前将十位置 0，即为：11111111.11111111.11111100.00000000，即 255.255.252.0. 这就是将划分成主机为 700 台 B 类 IP 地址 168.195.0.0 的子网掩码。</p>
-
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <div class="button readmore">
+          <a href="/2020/10/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%89%A9%E7%90%86%E5%B1%82/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/%E8%AE%A1%E7%BD%91/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 计网</a>
+        
       </div>
-      
-      
-        <br>
+    
+  </section>
+</article>
+
+          </div>
         
-
-
-  <section class='meta' id="footer-meta">
-    <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-01T00:00:00+08:00">
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2020/10/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/">
+      数据链路层
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://shyshy903.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>Haiyang Song</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Feb 1, 2020</p>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-10-11</p>
   </a>
 </div>
 
-        
-      
+          
         
           
+            
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%AE%A1%E7%BD%91/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>计网</p></a></div>
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://shyshy903.github.io/2020/02/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/&title=计算机网络基础 | what hurts more, the pain of hard work or the pain of regret?&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://shyshy903.github.io/2020/02/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/&title=计算机网络基础 | what hurts more, the pain of hard work or the pain of regret?&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://shyshy903.github.io/2020/02/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/&title=计算机网络基础 | what hurts more, the pain of hard work or the pain of regret?&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
-      
-    
+  <div class='new-meta-item category'>
+    <a href='/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>计算机网络</p>
+    </a>
   </div>
-</div>
 
 
-
+          
         
+          
+            
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
       
     </div>
   </section>
 
 
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
       
       
-          <div class="prev-next">
-              
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
-                          <h4>
-                              <a href="/2020/02/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" rel="prev" title="数据链路层">
-                                
-                                    数据链路层
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/%E8%AE%A1%E7%BD%91/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 计网</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
-              
-                  <section class="next">
-                      <span class="art-item-right" aria-hidden="true">
-                          <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                          <h4>
-                              <a href="/2020/01/16/SQL/MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" rel="prev" title="MYSQL安装配置">
-                                  
-                                      MYSQL安装配置
-                                  
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/SQL/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> SQL</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
+        <div class="button readmore">
+          <a href="/2020/10/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/%E8%AE%A1%E7%BD%91/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 计网</a>
+        
+      </div>
+    
+  </section>
+</article>
+
           </div>
+        
       
-    </section>
-  </article>
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
 
 
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2020/10/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+      计算机网络基础
+    </a>
+  </h2>
 
-  <!-- 显示推荐文章和评论 -->
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://shyshy903.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>Haiyang Song</p>
+      </a>
+    
+  </div>
 
 
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-10-01</p>
+  </a>
+</div>
 
-  <article class="post white-box comments">
-    <section class="article typo">
-      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Comments</h4>
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>计算机网络</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
       
       
+        <div class="button readmore">
+          <a href="/2020/10/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
       
-      
-        <section id="comments">
-          <div id="valine_container" class="valine_thread">
-            <i class="fas fa-spinner fa-spin fa-fw"></i>
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/%E8%AE%A1%E7%BD%91/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 计网</a>
+        
+      </div>
+    
+  </section>
+</article>
+
           </div>
-        </section>
+        
       
-    </section>
-  </article>
+    
+  </section>
+  
+    
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
+
+  
 
 
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: '计算机网络基础',
-      tools: true
-    }
-  </script>
-
-
+	
 </div>
 <aside class='l_side'>
   
@@ -575,33 +592,57 @@
         
           
           
-        
-          
-          
-        
-          
-          
-        
-          
-          
             
-              
-  <section class='widget toc-wrapper'>
+              <section class='widget author'>
+  <div class='content pure'>
     
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
-  
-    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
-  
-</header>
-
-    <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#计算机网络基础"><span class="toc-text">计算机网络基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#网络层次划分"><span class="toc-text">网络层次划分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IP地址"><span class="toc-text">IP地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特殊地址"><span class="toc-text">特殊地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#子网掩码及网络划分"><span class="toc-text">子网掩码及网络划分</span></a></li></ol></li></ol>
-    </div>
-  </section>
-
+      <div class='avatar'>
+        <img class='avatar' src='https://img.vim-cn.com/33/461edfd8f8283ad38990aa7a83131b4494eb2c.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:121166704@qq.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/shyshy903"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
 
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
       
@@ -709,6 +750,20 @@
           
         
       
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
     
 
   
@@ -762,6 +817,14 @@
   </div>
 </footer>
 <script>setLoadingBarProgress(80);</script>
+
+
+
+
+	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+	
+
+	
 
 
       <script>setLoadingBarProgress(60);</script>
@@ -842,38 +905,6 @@
 
 
 
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  
-    
-      
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0.6/js/volantis.min.js"></script>
-
-    
-  
-  <script>
-  var GUEST_INFO = ['nick','mail','link'];
-  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-    return GUEST_INFO.indexOf(item) > -1
-  });
-  var notify = 'true' == true;
-  var verify = 'true' == true;
-  var valine = new Valine();
-  valine.init({
-    el: '#valine_container',
-    notify: notify,
-    verify: verify,
-    guest_info: guest_info,
-    
-    appId: "DGEVoyKVeVmx0Hsn098Pkquo-gzGzoHsz",
-    appKey: "mkq3mUCepHlNs9LOIDsdR8VE",
-    placeholder: "快来评论吧~",
-    pageSize:'10',
-    avatar:'mp',
-    lang:'zh-cn',
-    highlight:'true'
-  })
-  </script>
 
 
 

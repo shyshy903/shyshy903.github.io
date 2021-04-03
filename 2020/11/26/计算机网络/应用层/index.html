@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>物理层 | what hurts more, the pain of hard work or the pain of regret?</title>
+  <title>应用层 | what hurts more, the pain of hard work or the pain of regret?</title>
   
   
   <meta name="description" content="https://img.vim-cn.com/33/461edfd8f8283ad38990aa7a83131b4494eb2c.jpg">
@@ -247,8 +247,8 @@
         
   
     <h1 class="title">
-      <a href="/2020/02/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%89%A9%E7%90%86%E5%B1%82/">
-        物理层
+      <a href="/2020/11/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/">
+        应用层
       </a>
     </h1>
   
@@ -279,7 +279,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-03</p>
+    <p>2020-11-26</p>
   </a>
 </div>
 
@@ -337,48 +337,44 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><p>物理层解决如何在连接各种计算机的传输媒体上传输数据比特流，而不是指具体的传输媒体</p>
+        <h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><p>应用层（英语：Application layer）位于OSI模型的第七层。应用层直接和应用程序接口结合，并提供常见的网络应用服务。应用层也向第六层表示层发出请求。</p>
+<h2 id="域名系统（DNS"><a href="#域名系统（DNS" class="headerlink" title="域名系统（DNS)"></a>域名系统（DNS)</h2><p>域名通俗来讲就是网络上每个地址的名称，全球唯一（难道有两个 www.baidu.com 吗）</p>
 <div align='center'>
-<img src="https://i.loli.net/2018/10/23/5bcf15d2286ea.png#shadow"></img>
+<img src="https://s1.ax1x.com/2018/11/24/FF7HFP.png#shadow"></img>
 </div>
 
 
-<h2 id="局域网通信模型"><a href="#局域网通信模型" class="headerlink" title="局域网通信模型"></a>局域网通信模型</h2><div align='center'>
-<img src="https://i.loli.net/2018/10/23/5bcf149f057e5.png#shadow"></img>
-</div>
-
-<h2 id="广域网通信模型"><a href="#广域网通信模型" class="headerlink" title="广域网通信模型"></a>广域网通信模型</h2><div align='center'>
-<img src="https://i.loli.net/2018/10/23/5bcf15fc5d58d.png#shadow"></img>
-</div>
-
-<h2 id="模拟信号与数字信号"><a href="#模拟信号与数字信号" class="headerlink" title="模拟信号与数字信号"></a>模拟信号与数字信号</h2><div align='center'>
-<img src="https://i.loli.net/2018/10/23/5bcf167d7ac2c.png#shadow"></img>
-</div>
-模拟信号与数字信号转换
-<div align='center'>
-<img src="https://i.loli.net/2018/10/23/5bcf17ca2d7d7.png#shadow"></img>
-</div>
-
-<h2 id="信道"><a href="#信道" class="headerlink" title="信道"></a>信道</h2><p>信道（Channel）是信息传输的通道，即信息进行传输时所经过的一条通路，信道的一端是发送端，另一端是接收端。一条传输介质上可以有多条信道（多路复用）</p>
+<h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><p>先输入nslookup查看本机 DNS，在输入要解析的域名www.baidu.com，返回该域名的 IP 地址</p>
+<h2 id="DHCP服务器"><a href="#DHCP服务器" class="headerlink" title="DHCP服务器"></a>DHCP服务器</h2><p>动态主机配置协议 DHCP，负责给互联网上的计算机提供动态的 IP 地址</p>
+<p>IP 地址获取方式有两种，一种静态 IP，一种动态 IP。静态 IP 是人工自己指定的，一般公司自己组建的局域网、学校机房的固定的计算机、机房服务器、互联网上的大型服务器，凡是位置固定不动的，都用静态 IP 地址。动态 IP 地址是用 DHCP 服务器来分配的地址，适用于计算机位置不固定、家庭拨号上网等情况。可以避免产生 IP 地址冲突。</p>
+<p>DHCP 客户端请求 IP 地址的过程（逆 arp 协议）</p>
+<p>需要地址的客户机先在网上发广播包请求地址，DHCP 服务器收到广播包后在自己的地址池里选一个地址（包括配套的子网掩码和网关），租给该客户机，该客户机再给 DHCP 服务器一个确认。（DHCP 服务器本身必须是静态地址！！！）</p>
+<h2 id="FTP服务器"><a href="#FTP服务器" class="headerlink" title="FTP服务器"></a>FTP服务器</h2><p>FTP 连接方式：</p>
 <ul>
-<li>单向信道<br>又称为单工通信，即信号只能向一个方向传输，任何时候都不能改变信号的传送方向。无线电广播或有线电视广播就是单工通信，信号只能是广播电台发送，收音机接收。</li>
-<li>双向交替信道<br>又称半双工通信，信号可以双向传送，但是必须是交替进行，一个时间只能向一个方向传。有些对讲机就是用半双工通信，A 端说话 B 端接听，B 端说话 A 端接听，不能同时说和听。</li>
-<li>双向同时信道<br>又称全双工通信，即信号可以同时双向传送。比如我们手机打电话，听和说可以同时进行。</li>
+<li>控制连接：标准端口为 21，用于发送 FTP 命令信息</li>
+<li>数据连接：标准端口为 20，用于上传、下载数据</li>
+<li><p>客户端选择数据连接的建立类型</p>
+</li>
+<li><p>主动模式：FTP 客户端告诉 FTP 服务器使用什么端口，FTP 服务器就主动用自己的 20 端口和 FTP 客户端的这个端口建立连接</p>
+</li>
+<li><p>被动模式：服务端在指定范围内打开一个新的端口，被动等待客户端发起连接<br>FTP 传输模式：</p>
+</li>
+<li><p>文本模式：ASCII 模式，以文本序列传输数据</p>
+</li>
+<li>二进制模式：Binary 模式，以二进制序列传输数据</li>
 </ul>
-<h2 id="奈氏准则"><a href="#奈氏准则" class="headerlink" title="奈氏准则"></a>奈氏准则</h2><p>在任何信道中，码元传输的速率是有上限的，否则就会出现码间串扰的问题，使接收端对码元的判决（即识别）成为不可能。举个例子，假如把一个人说话的声音录下来，然后进行倍速播放，当倍速达到一定程度时就听不清楚了。</p>
-<p>如果信道的频带越宽，也就是能够通过的信号高频分量越多，那么就可以使用更高速率传递码元而不出现码间串扰</p>
-<p>理想低通信道的最高码元传输速率 = 2WBaud</p>
-<p>W 是理想低通信道的带宽，单位为 HZ<br>Baud 是波特，是码元传输速率的单位<br>使用奈氏准则给出的公式，可以根据信道的带宽，计算出码元的最高传输速率</p>
-<h2 id="信道复用技术"><a href="#信道复用技术" class="headerlink" title="信道复用技术"></a>信道复用技术</h2><h3 id="频分复用"><a href="#频分复用" class="headerlink" title="频分复用"></a>频分复用</h3><div align='center'>
-<img src="https://i.loli.net/2018/10/24/5bcffbba16928.png#shadow"></img>
-</div>
-### 时分复用
-时分复用采用同一物理连接的不同时段来传输不同的信号，将时间划分为一段段等长的时分复用帧（TDM 帧）
-<div align='center'>
-<img src="https://i.loli.net/2018/10/24/5bcffc6f83469.png#shadow"></img>
-</div>
-
-<h3 id="波分复用"><a href="#波分复用" class="headerlink" title="波分复用"></a>波分复用</h3><p>提高光纤的传输信号的速率，也可以进行频分复用，由于光载波的频率很高，因此习惯上用波长而不用频率来表示所使用的光载波。这样就得出了波分复用这一名词</p>
+<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><ul>
+<li>www：万维网简称，分布式超媒体系统。URL 标记这个大系统中的资源位置，HTTP 进行资源传输，HTML 用以显示页面，搜索引擎提供寻找资源的方法</li>
+<li>url 的语法：协议名:// 主机域名或 ip 地址: 端口 / 资源的路径? 参数 1 = 值 1# 参数 2 = 值 2</li>
+<li>作为服务器，要时刻监听 80 端口，一旦有访问，就建立一条 tcp 链接，在此基础上传输 http 协议的数据。解析协议数据，获取访问的 html 文档。由于采用了 tcp 请求，就有一个请求和确认，收到确认的过程。http 协议中，同样有一个请求链接时间，一个传输报文的时间。我们会设置一个超时最大的值，超过即放弃请求。</li>
+<li>代理服务器：即高速缓存，解决了路由器 ip 地址被自己的客户机使用崩溃的问题。</li>
+<li>HTTP 请求报文中的请求方法：get读取信息；POST给服务器添加信息；option请求一些选项的信息；head请求 html 页面里的 headers 标签；put在指定的 url 下存一些文档；DELETE删除 url 对应的文件；connect用于代理服务器；trace环回测试的请求报文</li>
+<li>Cookie 是个服务器跟踪客户的工具</li>
+<li>动态文档：动态文档是指在客户端请求到服务器时，服务器首先安排一个应用程序处理客户端的请求数据，并把处理后的数据封装成 http 报文里面，传输给客户端。这样，主要是有一些数据是实时可变的，不可能将数据放在静态的 html 里面，那样讲无法同步更新。但是这种动态指的是每次刷新都获取当前值，而不刷新的话，数据不会自己变化呈现。</li>
+<li>活动 web 文档：服务器推送：在这种情况下，服务器和客户端之间建立 http 长链接，服务器不断地把数据推送给客户端。动画呈现，时间更新等等。太占带宽，链接不断，占用服务器资源，端口，带宽，时间资源。 活动文档：服务器直接把一个活动的程序，脚本之类的返回给客户端，其实链接已经断开了，但是程序运行呈现在页面上，看起来是连续不断的数据</li>
+<li>搜索技术</li>
+<li>加密技术 https：http 明文在网上传播不安全，对于有安全需求的消息，服务器和客户端之间首先建立连接，之后，服务器给客户端提供一个加密算法，一把秘钥，客户端程序使用算法和秘钥对数据加密，传输给服务器，服务器再用另一把不同的秘钥将数据解密出来</li>
+</ul>
 
       </div>
       
@@ -391,10 +387,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-03T00:00:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-26T00:00:00+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Feb 3, 2020</p>
+    <p>updated at Nov 26, 2020</p>
   </a>
 </div>
 
@@ -416,7 +412,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://shyshy903.github.io/2020/02/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%89%A9%E7%90%86%E5%B1%82/&title=物理层 | what hurts more, the pain of hard work or the pain of regret?&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://shyshy903.github.io/2020/11/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/&title=应用层 | what hurts more, the pain of hard work or the pain of regret?&summary="
           
           >
           
@@ -428,7 +424,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://shyshy903.github.io/2020/02/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%89%A9%E7%90%86%E5%B1%82/&title=物理层 | what hurts more, the pain of hard work or the pain of regret?&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://shyshy903.github.io/2020/11/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/&title=应用层 | what hurts more, the pain of hard work or the pain of regret?&summary="
           
           >
           
@@ -440,7 +436,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://shyshy903.github.io/2020/02/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%89%A9%E7%90%86%E5%B1%82/&title=物理层 | what hurts more, the pain of hard work or the pain of regret?&summary="
+          href="http://service.weibo.com/share/share.php?url=https://shyshy903.github.io/2020/11/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/&title=应用层 | what hurts more, the pain of hard work or the pain of regret?&summary="
           
           >
           
@@ -468,9 +464,9 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
                           <h4>
-                              <a href="/2020/02/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/" rel="prev" title="网络层">
+                              <a href="/2020/12/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BC%A0%E8%BE%93%E5%B1%82/" rel="prev" title="传输层">
                                 
-                                    网络层
+                                    传输层
                                 
                               </a>
                           </h4>
@@ -488,9 +484,9 @@
                       <span class="art-item-right" aria-hidden="true">
                           <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/2020/02/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" rel="prev" title="数据链路层">
+                              <a href="/2020/11/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/" rel="prev" title="网络层">
                                   
-                                      数据链路层
+                                      网络层
                                   
                               </a>
                           </h4>
@@ -541,7 +537,7 @@
 
   <script>
     window.subData = {
-      title: '物理层',
+      title: '应用层',
       tools: true
     }
   </script>
@@ -578,7 +574,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#物理层"><span class="toc-text">物理层</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#局域网通信模型"><span class="toc-text">局域网通信模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#广域网通信模型"><span class="toc-text">广域网通信模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模拟信号与数字信号"><span class="toc-text">模拟信号与数字信号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#信道"><span class="toc-text">信道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#奈氏准则"><span class="toc-text">奈氏准则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#信道复用技术"><span class="toc-text">信道复用技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#频分复用"><span class="toc-text">频分复用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#波分复用"><span class="toc-text">波分复用</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#应用层"><span class="toc-text">应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#域名系统（DNS"><span class="toc-text">域名系统（DNS)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#域名解析"><span class="toc-text">域名解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DHCP服务器"><span class="toc-text">DHCP服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FTP服务器"><span class="toc-text">FTP服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP协议"><span class="toc-text">HTTP协议</span></a></li></ol></li></ol>
     </div>
   </section>
 
